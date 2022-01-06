@@ -8,6 +8,7 @@ The following paths are extracted:
 - `LICENSE.TXT`
 - `src/rp2040/hardware_regs/include/hardware/regs/`
 - `src/rp2040/hardware_structs/include/hardware/structs/`
+- `src/rp2_common/cmsis/stub/CMSIS/Device/RaspberryPi/RP2040/Include`
 
 Boot2 variants builded from `src/rp2_common/boot_stage2`
 

@@ -15,6 +15,7 @@ source_paths = [
     ["","LICENSE.TXT"],
     ["src/rp2040/hardware_regs","include/*/*/*h"],
     ["src/rp2040/hardware_structs","include/*/*/*.h"],
+    ["src/rp2_common/cmsis/stub/CMSIS/Device/RaspberryPi/RP2040/Include","*.h","include"],
 ]
 
 boot2_variants = [
@@ -61,6 +62,8 @@ for pattern_conf in source_paths:
     for path in Path(src_path).glob(pattern):
         if not path.is_file(): continue
         dest = path.relative_to(src_path)
+        if len(pattern_conf) > 2:
+        	dest = Path(pattern_conf[2]) / dest
         dest.parent.mkdir(parents=True, exist_ok=True)
         print(dest)
         # Copy, normalize newline and remove trailing whitespace
