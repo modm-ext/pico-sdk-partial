@@ -13,8 +13,8 @@ import urllib.request
 
 source_paths = [
     ["","LICENSE.TXT"],
-    ["src/rp2040/hardware_regs","include/*/*/*h"],
-    ["src/rp2040/hardware_structs","include/*/*/*.h"],
+    ["src/rp2040/hardware_regs","include/**/*.h"],
+    ["src/rp2040/hardware_structs","include/**/*.h"],
     ["src/rp2_common/cmsis/stub/CMSIS/Device/RaspberryPi/RP2040/Include","*.h","include"],
 ]
 
