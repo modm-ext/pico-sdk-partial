@@ -8,6 +8,7 @@ import fnmatch
 import subprocess
 import binascii
 import struct
+import re
 from pathlib import Path
 import urllib.request
 
@@ -40,6 +41,13 @@ def run(where, command, stdin=None):
 def bitrev(x, width):
     return int("{:0{w}b}".format(x, w=width)[::-1], 2)
 
+hw_def_re = re.compile(r'#define (.+)_hw \(\((.+)_hw_t \*const\)(.+)_BASE\)')
+def process(l):
+	hw_def = hw_def_re.match(l)
+	if hw_def:
+		print("replace hw def {}".format(hw_def[1]))
+		return "#define {}_hw (({}_hw_t*){}_BASE)".format(hw_def[1],hw_def[2],hw_def[3])
+	return l
 
 with urllib.request.urlopen("https://api.github.com/repos/raspberrypi/pico-sdk/releases/latest") as response:
    tag = json.loads(response.read())["tag_name"]
@@ -69,7 +77,7 @@ for pattern_conf in source_paths:
         # Copy, normalize newline and remove trailing whitespace
         with path.open("r", newline=None, encoding="utf-8", errors="replace") as rfile, \
                            dest.open("w", encoding="utf-8") as wfile:
-            wfile.writelines(l.rstrip()+"\n" for l in rfile.readlines())
+            wfile.writelines(process(l.rstrip())+"\n" for l in rfile.readlines())
 
 print("Building boot2 varints...")
 
