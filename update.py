@@ -17,6 +17,7 @@ source_paths = [
     ["src/rp2040/hardware_regs","include/**/*.h"],
     ["src/rp2040/hardware_structs","include/**/*.h"],
     ["src/rp2_common/cmsis/stub/CMSIS/Device/RaspberryPi/RP2040/Include","*.h","include"],
+    ["tools/","pioasm/**/*.[hct]*"],
 ]
 
 boot2_variants = [
@@ -61,6 +62,8 @@ if "--fast" not in sys.argv:
 
 # remove the sources in this repo
 shutil.rmtree("include", ignore_errors=True)
+shutil.rmtree("src", ignore_errors=True)
+shutil.rmtree("pioasm", ignore_errors=True)
 
 
 print("Copying pico-sdk headers...")
@@ -79,7 +82,7 @@ for pattern_conf in source_paths:
                            dest.open("w", encoding="utf-8") as wfile:
             wfile.writelines(process(l.rstrip())+"\n" for l in rfile.readlines())
 
-print("Building boot2 varints...")
+print("Building boot2 variants...")
 
 for variant in boot2_variants:
     builddir = Path('build/boot2_' + variant)
@@ -118,6 +121,6 @@ for variant in boot2_variants:
     except:
         sys.exit("Could not open output file '{}'".format(ofilename))
 
-subprocess.run("git add src include LICENSE.TXT", shell=True)
+subprocess.run("git add src include pioasm LICENSE.TXT", shell=True)
 if subprocess.call("git diff-index --quiet HEAD --", shell=True):
     subprocess.run('git commit -m "Update pico-sdk to v{}"'.format(tag), shell=True)

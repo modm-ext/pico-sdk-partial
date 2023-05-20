@@ -9,7 +9,14 @@ The following paths are extracted:
 - `src/rp2040/hardware_regs/include`
 - `src/rp2040/hardware_structs/include`
 - `src/rp2_common/cmsis/stub/CMSIS/Device/RaspberryPi/RP2040/Include`
+- `tools/pioasm/`
 
-Boot2 variants builded from `src/rp2_common/boot_stage2`
+Boot2 variants are built from `src/rp2_common/boot_stage2`.
+The stand-alone `pioasm` can be compiled as such:
+
+```sh
+mkdir -p pioasm/build && cd pioasm/build
+cmake .. && make
+```
 
 This repository is updated periodically by Github Actions.
