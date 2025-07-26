@@ -2,24 +2,28 @@
 
 import os
 import sys
-import json
-import shutil
-import fnmatch
 import subprocess
 import binascii
 import struct
-import re
 from pathlib import Path
-import urllib.request
 
-source_paths = [
-    ["","LICENSE.TXT"],
-    ["src/rp2040/hardware_regs","include/**/*.h"],
-    ["src/rp2040/hardware_structs","include/**/*.h"],
-    ["src/rp2_common/cmsis/stub/CMSIS/Device/RaspberryPi/RP2040/Include","*.h","include"],
-    ["tools/","pioasm/**/*.[hct]*"],
-]
+# wget -qL https://raw.githubusercontent.com/modm-ext/partial/main/partial.py
+import partial
+partial.keepalive()
 
+repo = "raspberrypi/pico-sdk"
+src = Path("pico_sdk_src")
+
+tag = partial.latest_release_tag(repo)
+partial.clone_repo(repo, src, branch=tag, overwrite="--fast" not in sys.argv)
+files = partial.copy_files(src, ["LICENSE.TXT"])
+files += partial.copy_files(Path("pico_sdk_src/src/rp2040/hardware_regs"), ["include/**/*.h"])
+files += partial.copy_files(Path("pico_sdk_src/src/rp2040/hardware_structs"), ["include/**/*.h"], delete=False)
+files += partial.copy_files(Path("pico_sdk_src/src/rp2_common/cmsis/stub/CMSIS/Device/RP2040/Include"), ["*.h"], dest=Path("include"), delete=False)
+files += partial.copy_files(Path("pico_sdk_src/tools"), ["pioasm/**/*.[hct]*"])
+files += [Path("src")]
+
+print("Building boot2 variants...")
 boot2_variants = [
     "generic_03h",
     "at25sf128a",
@@ -32,7 +36,7 @@ def run(where, command, stdin=None):
     print(command)
     result = subprocess.run(command, shell=True, cwd=where, input=stdin, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     if result.returncode != 0:
-        print('failed exec command ' + command)
+        print(f"Failed exec command: '{command}'")
         print(result.stderr.decode("utf-8").strip(" \n"))
         exit(1)
     return (result.returncode,
@@ -42,63 +46,21 @@ def run(where, command, stdin=None):
 def bitrev(x, width):
     return int("{:0{w}b}".format(x, w=width)[::-1], 2)
 
-hw_def_re = re.compile(r'#define (.+)_hw \(\((.+)_hw_t \*const\)(.+)_BASE\)')
-def process(l):
-    hw_def = hw_def_re.match(l)
-    if hw_def:
-        print("replace hw def {}".format(hw_def[1]))
-        return "#define {}_hw (({}_hw_t*){}_BASE)".format(hw_def[1],hw_def[2],hw_def[3])
-    return l
-
-with urllib.request.urlopen("https://api.github.com/repos/raspberrypi/pico-sdk/releases/latest") as response:
-   tag = json.loads(response.read())["tag_name"]
-
-# clone the repository
-if "--fast" not in sys.argv:
-    print("Cloning pico-sdk repository at tag v{}...".format(tag))
-    shutil.rmtree("pico_sdk_src", ignore_errors=True)
-    subprocess.run("git clone --depth=1 --branch {} ".format(tag) +
-                   "https://github.com/raspberrypi/pico-sdk.git pico_sdk_src", shell=True)
-
-# remove the sources in this repo
-shutil.rmtree("include", ignore_errors=True)
-shutil.rmtree("src", ignore_errors=True)
-shutil.rmtree("pioasm", ignore_errors=True)
-
-
-print("Copying pico-sdk headers...")
-for pattern_conf in source_paths:
-    src_path = os.path.join("pico_sdk_src",pattern_conf[0])
-    pattern = pattern_conf[1]
-    for path in Path(src_path).glob(pattern):
-        if not path.is_file(): continue
-        dest = path.relative_to(src_path)
-        if len(pattern_conf) > 2:
-            dest = Path(pattern_conf[2]) / dest
-        dest.parent.mkdir(parents=True, exist_ok=True)
-        print(dest)
-        # Copy, normalize newline and remove trailing whitespace
-        with path.open("r", newline=None, encoding="utf-8", errors="replace") as rfile, \
-                           dest.open("w", encoding="utf-8") as wfile:
-            wfile.writelines(process(l.rstrip())+"\n" for l in rfile.readlines())
-
-print("Building boot2 variants...")
-
 for variant in boot2_variants:
-    builddir = Path('build/boot2_' + variant)
-    if not builddir.exists():
-        builddir.mkdir(parents=True, exist_ok=True)
-    run(builddir,"cmake ../../pico_sdk_src -G \"Unix Makefiles\" -DPICO_DEFAULT_BOOT_STAGE2=boot2_" + variant)
-    run(builddir,'make bs2_default_padded_checksummed_asm') # for validate
+    builddir = Path(f"build/boot2_{variant}")
+    builddir.mkdir(parents=True, exist_ok=True)
+
+    run(builddir, f'cmake ../../pico_sdk_src -G "Unix Makefiles" -DPICO_DEFAULT_BOOT_STAGE2=boot2_{variant}')
+    run(builddir, "make bs2_default_bin") # for validate
     #run(builddir,'make bs2_default_bin')
-    ifile = os.path.join(builddir,'src/rp2_common/boot_stage2/bs2_default.bin')
+    ifile = builddir / "src/rp2040/boot_stage2/bs2_default.bin"
     try:
         idata = open(ifile, "rb").read()
     except:
-        sys.exit("Could not open input file '{}'".format(ifile))
+        sys.exit(f"Could not open input file '{ifile}'")
     pad = 256
     if len(idata) >= pad - 4:
-        sys.exit("Input file size ({} bytes) too large for final size ({} bytes)".format(len(idata), pad))
+        sys.exit(f"Input file size ({len(idata)} bytes) too large for final size ({pad} bytes)")
     idata_padded = idata + bytes(pad - 4 - len(idata))
     seed = 0xffffffff
     # Our bootrom CRC32 is slightly bass-ackward but it's best to work around for now (FIXME)
@@ -107,20 +69,18 @@ for variant in boot2_variants:
         (binascii.crc32(bytes(bitrev(b, 8) for b in idata_padded), seed ^ 0xffffffff) ^ 0xffffffff) & 0xffffffff, 32)
     odata = idata_padded + struct.pack("<L", checksum)
 
-    ofilename = 'src/boot2_' + variant + '.cpp'
+    ofilename = Path(f"src/boot2_{variant}.cpp")
     try:
-        Path(ofilename).parent.mkdir(parents=True, exist_ok=True)
-        with open(ofilename, "w") as ofile:
+        ofilename.parent.mkdir(parents=True, exist_ok=True)
+        with ofilename.open("w") as ofile:
             ofile.write("// Stage2 bootloader\n\n")
             ofile.write("#include <cstdint>\n")
-            ofile.write("extern \"C\" __attribute__((section(\".boot2\"))) const uint8_t boot2[256] = {\n")
+            ofile.write('extern "C" __attribute__((section(".boot2"))) const uint8_t boot2[256] = {\n')
             for offs in range(0, len(odata), 16):
                 chunk = odata[offs:min(offs + 16, len(odata))]
-                ofile.write("\t {},\n".format(", ".join("0x{:02x}".format(b) for b in chunk)))
+                ofile.write("\t {},\n".format(", ".join(f"0x{b:02x}" for b in chunk)))
             ofile.write("};\n")
     except:
         sys.exit("Could not open output file '{}'".format(ofilename))
 
-subprocess.run("git add src include pioasm LICENSE.TXT", shell=True)
-if subprocess.call("git diff-index --quiet HEAD --", shell=True):
-    subprocess.run('git commit -m "Update pico-sdk to v{}"'.format(tag), shell=True)
+partial.commit(files, tag)

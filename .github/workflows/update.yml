@@ -7,26 +7,23 @@ on:
 
 jobs:
   update:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     container:
       image: ghcr.io/modm-ext/modm-build-cortex-m:latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Configure Git
         run: |
           git config --global user.email "bot@modm.io"
           git config --global user.name "modm update bot"
           git config --global --add safe.directory /__w/pico-sdk-partial/pico-sdk-partial
       - name: Run update.py script
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         run: |
+          wget -qL https://raw.githubusercontent.com/modm-ext/partial/main/partial.py
           python3 update.py
       - name: Git push
         run: |
           git push origin main
-      - name: Keep Alive
-        if: always()
-        uses: gautamkrishnar/keepalive-workflow@v1
-        with:
-          committer_username: modm update bot
-          committer_email: bot@modm.io
