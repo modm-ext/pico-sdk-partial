@@ -1,5 +1,7 @@
+// THIS HEADER FILE IS AUTOMATICALLY GENERATED -- DO NOT EDIT
+
 /**
- * Copyright (c) 2021 Raspberry Pi (Trading) Ltd.
+ * Copyright (c) 2024 Raspberry Pi Ltd.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -7,10 +9,9 @@
 // Register block : UART
 // Version        : 1
 // Bus type       : apb
-// Description    : None
 // =============================================================================
-#ifndef HARDWARE_REGS_UART_DEFINED
-#define HARDWARE_REGS_UART_DEFINED
+#ifndef _HARDWARE_REGS_UART_H
+#define _HARDWARE_REGS_UART_H
 // =============================================================================
 // Register    : UART_UARTDR
 // Description : Data Register, UARTDR
@@ -1145,4 +1146,5 @@
 #define UART_UARTPCELLID3_UARTPCELLID3_LSB    _u(0)
 #define UART_UARTPCELLID3_UARTPCELLID3_ACCESS "RO"
 // =============================================================================
-#endif // HARDWARE_REGS_UART_DEFINED
+#endif // _HARDWARE_REGS_UART_H
+

@@ -1,5 +1,7 @@
+// THIS HEADER FILE IS AUTOMATICALLY GENERATED -- DO NOT EDIT
+
 /**
- * Copyright (c) 2021 Raspberry Pi (Trading) Ltd.
+ * Copyright (c) 2024 Raspberry Pi Ltd.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -7,10 +9,9 @@
 // Register block : SPI
 // Version        : 1
 // Bus type       : apb
-// Description    : None
 // =============================================================================
-#ifndef HARDWARE_REGS_SPI_DEFINED
-#define HARDWARE_REGS_SPI_DEFINED
+#ifndef _HARDWARE_REGS_SPI_H
+#define _HARDWARE_REGS_SPI_H
 // =============================================================================
 // Register    : SPI_SSPCR0
 // Description : Control register 0, SSPCR0 on page 3-4
@@ -518,4 +519,5 @@
 #define SPI_SSPPCELLID3_SSPPCELLID3_LSB    _u(0)
 #define SPI_SSPPCELLID3_SSPPCELLID3_ACCESS "RO"
 // =============================================================================
-#endif // HARDWARE_REGS_SPI_DEFINED
+#endif // _HARDWARE_REGS_SPI_H
+

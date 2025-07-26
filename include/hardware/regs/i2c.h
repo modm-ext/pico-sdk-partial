@@ -1,5 +1,7 @@
+// THIS HEADER FILE IS AUTOMATICALLY GENERATED -- DO NOT EDIT
+
 /**
- * Copyright (c) 2021 Raspberry Pi (Trading) Ltd.
+ * Copyright (c) 2024 Raspberry Pi Ltd.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -83,8 +85,8 @@
 //                  IC_DEFAULT_UFM_SPKLEN ............. 0x1
 //                  IC_TX_BUFFER_DEPTH ................ 16
 // =============================================================================
-#ifndef HARDWARE_REGS_I2C_DEFINED
-#define HARDWARE_REGS_I2C_DEFINED
+#ifndef _HARDWARE_REGS_I2C_H
+#define _HARDWARE_REGS_I2C_H
 // =============================================================================
 // Register    : I2C_IC_CON
 // Description : I2C Control Register. This register can be written only when
@@ -116,13 +118,13 @@
 //               Reset value: 0x0.
 //               0x0 -> Overflow when RX_FIFO is full
 //               0x1 -> Hold bus when RX_FIFO is full
-#define I2C_IC_CON_RX_FIFO_FULL_HLD_CTRL_RESET          _u(0x0)
-#define I2C_IC_CON_RX_FIFO_FULL_HLD_CTRL_BITS           _u(0x00000200)
-#define I2C_IC_CON_RX_FIFO_FULL_HLD_CTRL_MSB            _u(9)
-#define I2C_IC_CON_RX_FIFO_FULL_HLD_CTRL_LSB            _u(9)
-#define I2C_IC_CON_RX_FIFO_FULL_HLD_CTRL_ACCESS         "RW"
+#define I2C_IC_CON_RX_FIFO_FULL_HLD_CTRL_RESET  _u(0x0)
+#define I2C_IC_CON_RX_FIFO_FULL_HLD_CTRL_BITS   _u(0x00000200)
+#define I2C_IC_CON_RX_FIFO_FULL_HLD_CTRL_MSB    _u(9)
+#define I2C_IC_CON_RX_FIFO_FULL_HLD_CTRL_LSB    _u(9)
+#define I2C_IC_CON_RX_FIFO_FULL_HLD_CTRL_ACCESS "RW"
 #define I2C_IC_CON_RX_FIFO_FULL_HLD_CTRL_VALUE_DISABLED _u(0x0)
-#define I2C_IC_CON_RX_FIFO_FULL_HLD_CTRL_VALUE_ENABLED  _u(0x1)
+#define I2C_IC_CON_RX_FIFO_FULL_HLD_CTRL_VALUE_ENABLED _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_CON_TX_EMPTY_CTRL
 // Description : This bit controls the generation of the TX_EMPTY interrupt, as
@@ -131,13 +133,13 @@
 //               Reset value: 0x0.
 //               0x0 -> Default behaviour of TX_EMPTY interrupt
 //               0x1 -> Controlled generation of TX_EMPTY interrupt
-#define I2C_IC_CON_TX_EMPTY_CTRL_RESET          _u(0x0)
-#define I2C_IC_CON_TX_EMPTY_CTRL_BITS           _u(0x00000100)
-#define I2C_IC_CON_TX_EMPTY_CTRL_MSB            _u(8)
-#define I2C_IC_CON_TX_EMPTY_CTRL_LSB            _u(8)
-#define I2C_IC_CON_TX_EMPTY_CTRL_ACCESS         "RW"
+#define I2C_IC_CON_TX_EMPTY_CTRL_RESET  _u(0x0)
+#define I2C_IC_CON_TX_EMPTY_CTRL_BITS   _u(0x00000100)
+#define I2C_IC_CON_TX_EMPTY_CTRL_MSB    _u(8)
+#define I2C_IC_CON_TX_EMPTY_CTRL_LSB    _u(8)
+#define I2C_IC_CON_TX_EMPTY_CTRL_ACCESS "RW"
 #define I2C_IC_CON_TX_EMPTY_CTRL_VALUE_DISABLED _u(0x0)
-#define I2C_IC_CON_TX_EMPTY_CTRL_VALUE_ENABLED  _u(0x1)
+#define I2C_IC_CON_TX_EMPTY_CTRL_VALUE_ENABLED _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_CON_STOP_DET_IFADDRESSED
 // Description : In slave mode: - 1'b1:  issues the STOP_DET interrupt only when
@@ -151,13 +153,13 @@
 //               transmitted address matches the slave address (SAR).
 //               0x0 -> slave issues STOP_DET intr always
 //               0x1 -> slave issues STOP_DET intr only if addressed
-#define I2C_IC_CON_STOP_DET_IFADDRESSED_RESET          _u(0x0)
-#define I2C_IC_CON_STOP_DET_IFADDRESSED_BITS           _u(0x00000080)
-#define I2C_IC_CON_STOP_DET_IFADDRESSED_MSB            _u(7)
-#define I2C_IC_CON_STOP_DET_IFADDRESSED_LSB            _u(7)
-#define I2C_IC_CON_STOP_DET_IFADDRESSED_ACCESS         "RW"
+#define I2C_IC_CON_STOP_DET_IFADDRESSED_RESET  _u(0x0)
+#define I2C_IC_CON_STOP_DET_IFADDRESSED_BITS   _u(0x00000080)
+#define I2C_IC_CON_STOP_DET_IFADDRESSED_MSB    _u(7)
+#define I2C_IC_CON_STOP_DET_IFADDRESSED_LSB    _u(7)
+#define I2C_IC_CON_STOP_DET_IFADDRESSED_ACCESS "RW"
 #define I2C_IC_CON_STOP_DET_IFADDRESSED_VALUE_DISABLED _u(0x0)
-#define I2C_IC_CON_STOP_DET_IFADDRESSED_VALUE_ENABLED  _u(0x1)
+#define I2C_IC_CON_STOP_DET_IFADDRESSED_VALUE_ENABLED _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_CON_IC_SLAVE_DISABLE
 // Description : This bit controls whether I2C has its slave disabled, which
@@ -172,12 +174,12 @@
 //               0, then bit 0 should also be written with a 0.
 //               0x0 -> Slave mode is enabled
 //               0x1 -> Slave mode is disabled
-#define I2C_IC_CON_IC_SLAVE_DISABLE_RESET                _u(0x1)
-#define I2C_IC_CON_IC_SLAVE_DISABLE_BITS                 _u(0x00000040)
-#define I2C_IC_CON_IC_SLAVE_DISABLE_MSB                  _u(6)
-#define I2C_IC_CON_IC_SLAVE_DISABLE_LSB                  _u(6)
-#define I2C_IC_CON_IC_SLAVE_DISABLE_ACCESS               "RW"
-#define I2C_IC_CON_IC_SLAVE_DISABLE_VALUE_SLAVE_ENABLED  _u(0x0)
+#define I2C_IC_CON_IC_SLAVE_DISABLE_RESET  _u(0x1)
+#define I2C_IC_CON_IC_SLAVE_DISABLE_BITS   _u(0x00000040)
+#define I2C_IC_CON_IC_SLAVE_DISABLE_MSB    _u(6)
+#define I2C_IC_CON_IC_SLAVE_DISABLE_LSB    _u(6)
+#define I2C_IC_CON_IC_SLAVE_DISABLE_ACCESS "RW"
+#define I2C_IC_CON_IC_SLAVE_DISABLE_VALUE_SLAVE_ENABLED _u(0x0)
 #define I2C_IC_CON_IC_SLAVE_DISABLE_VALUE_SLAVE_DISABLED _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_CON_IC_RESTART_EN
@@ -186,25 +188,25 @@
 //               conditions; however, RESTART conditions are used in several
 //               DW_apb_i2c operations. When RESTART is disabled, the master is
 //               prohibited from performing the following functions: - Sending a
-//               START BYTE - Performing any high-speed mode operation -
-//               High-speed mode operation - Performing direction changes in
-//               combined format mode - Performing a read operation with a
-//               10-bit address By replacing RESTART condition followed by a
-//               STOP and a subsequent START condition, split operations are
-//               broken down into multiple DW_apb_i2c transfers. If the above
-//               operations are performed, it will result in setting bit 6
-//               (TX_ABRT) of the IC_RAW_INTR_STAT register.
+//               START BYTE - Performing any high-speed mode operation - High-
+//               speed mode operation - Performing direction changes in combined
+//               format mode - Performing a read operation with a 10-bit address
+//               By replacing RESTART condition followed by a STOP and a
+//               subsequent START condition, split operations are broken down
+//               into multiple DW_apb_i2c transfers. If the above operations are
+//               performed, it will result in setting bit 6 (TX_ABRT) of the
+//               IC_RAW_INTR_STAT register.
 //
 //               Reset value: ENABLED
 //               0x0 -> Master restart disabled
 //               0x1 -> Master restart enabled
-#define I2C_IC_CON_IC_RESTART_EN_RESET          _u(0x1)
-#define I2C_IC_CON_IC_RESTART_EN_BITS           _u(0x00000020)
-#define I2C_IC_CON_IC_RESTART_EN_MSB            _u(5)
-#define I2C_IC_CON_IC_RESTART_EN_LSB            _u(5)
-#define I2C_IC_CON_IC_RESTART_EN_ACCESS         "RW"
+#define I2C_IC_CON_IC_RESTART_EN_RESET  _u(0x1)
+#define I2C_IC_CON_IC_RESTART_EN_BITS   _u(0x00000020)
+#define I2C_IC_CON_IC_RESTART_EN_MSB    _u(5)
+#define I2C_IC_CON_IC_RESTART_EN_LSB    _u(5)
+#define I2C_IC_CON_IC_RESTART_EN_ACCESS "RW"
 #define I2C_IC_CON_IC_RESTART_EN_VALUE_DISABLED _u(0x0)
-#define I2C_IC_CON_IC_RESTART_EN_VALUE_ENABLED  _u(0x1)
+#define I2C_IC_CON_IC_RESTART_EN_VALUE_ENABLED _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_CON_IC_10BITADDR_MASTER
 // Description : Controls whether the DW_apb_i2c starts its transfers in 7- or
@@ -212,12 +214,12 @@
 //               addressing - 1: 10-bit addressing
 //               0x0 -> Master 7Bit addressing mode
 //               0x1 -> Master 10Bit addressing mode
-#define I2C_IC_CON_IC_10BITADDR_MASTER_RESET             _u(0x0)
-#define I2C_IC_CON_IC_10BITADDR_MASTER_BITS              _u(0x00000010)
-#define I2C_IC_CON_IC_10BITADDR_MASTER_MSB               _u(4)
-#define I2C_IC_CON_IC_10BITADDR_MASTER_LSB               _u(4)
-#define I2C_IC_CON_IC_10BITADDR_MASTER_ACCESS            "RW"
-#define I2C_IC_CON_IC_10BITADDR_MASTER_VALUE_ADDR_7BITS  _u(0x0)
+#define I2C_IC_CON_IC_10BITADDR_MASTER_RESET  _u(0x0)
+#define I2C_IC_CON_IC_10BITADDR_MASTER_BITS   _u(0x00000010)
+#define I2C_IC_CON_IC_10BITADDR_MASTER_MSB    _u(4)
+#define I2C_IC_CON_IC_10BITADDR_MASTER_LSB    _u(4)
+#define I2C_IC_CON_IC_10BITADDR_MASTER_ACCESS "RW"
+#define I2C_IC_CON_IC_10BITADDR_MASTER_VALUE_ADDR_7BITS _u(0x0)
 #define I2C_IC_CON_IC_10BITADDR_MASTER_VALUE_ADDR_10BITS _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_CON_IC_10BITADDR_SLAVE
@@ -230,12 +232,12 @@
 //               that match the full 10 bits of the IC_SAR register.
 //               0x0 -> Slave 7Bit addressing
 //               0x1 -> Slave 10Bit addressing
-#define I2C_IC_CON_IC_10BITADDR_SLAVE_RESET             _u(0x0)
-#define I2C_IC_CON_IC_10BITADDR_SLAVE_BITS              _u(0x00000008)
-#define I2C_IC_CON_IC_10BITADDR_SLAVE_MSB               _u(3)
-#define I2C_IC_CON_IC_10BITADDR_SLAVE_LSB               _u(3)
-#define I2C_IC_CON_IC_10BITADDR_SLAVE_ACCESS            "RW"
-#define I2C_IC_CON_IC_10BITADDR_SLAVE_VALUE_ADDR_7BITS  _u(0x0)
+#define I2C_IC_CON_IC_10BITADDR_SLAVE_RESET  _u(0x0)
+#define I2C_IC_CON_IC_10BITADDR_SLAVE_BITS   _u(0x00000008)
+#define I2C_IC_CON_IC_10BITADDR_SLAVE_MSB    _u(3)
+#define I2C_IC_CON_IC_10BITADDR_SLAVE_LSB    _u(3)
+#define I2C_IC_CON_IC_10BITADDR_SLAVE_ACCESS "RW"
+#define I2C_IC_CON_IC_10BITADDR_SLAVE_VALUE_ADDR_7BITS _u(0x0)
 #define I2C_IC_CON_IC_10BITADDR_SLAVE_VALUE_ADDR_10BITS _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_CON_SPEED
@@ -260,14 +262,14 @@
 //               0x1 -> Standard Speed mode of operation
 //               0x2 -> Fast or Fast Plus mode of operation
 //               0x3 -> High Speed mode of operation
-#define I2C_IC_CON_SPEED_RESET          _u(0x2)
-#define I2C_IC_CON_SPEED_BITS           _u(0x00000006)
-#define I2C_IC_CON_SPEED_MSB            _u(2)
-#define I2C_IC_CON_SPEED_LSB            _u(1)
-#define I2C_IC_CON_SPEED_ACCESS         "RW"
+#define I2C_IC_CON_SPEED_RESET  _u(0x2)
+#define I2C_IC_CON_SPEED_BITS   _u(0x00000006)
+#define I2C_IC_CON_SPEED_MSB    _u(2)
+#define I2C_IC_CON_SPEED_LSB    _u(1)
+#define I2C_IC_CON_SPEED_ACCESS "RW"
 #define I2C_IC_CON_SPEED_VALUE_STANDARD _u(0x1)
-#define I2C_IC_CON_SPEED_VALUE_FAST     _u(0x2)
-#define I2C_IC_CON_SPEED_VALUE_HIGH     _u(0x3)
+#define I2C_IC_CON_SPEED_VALUE_FAST _u(0x2)
+#define I2C_IC_CON_SPEED_VALUE_HIGH _u(0x3)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_CON_MASTER_MODE
 // Description : This bit controls whether the DW_apb_i2c master is enabled.
@@ -276,13 +278,13 @@
 //               '1' then bit 6 should also be written with a '1'.
 //               0x0 -> Master mode is disabled
 //               0x1 -> Master mode is enabled
-#define I2C_IC_CON_MASTER_MODE_RESET          _u(0x1)
-#define I2C_IC_CON_MASTER_MODE_BITS           _u(0x00000001)
-#define I2C_IC_CON_MASTER_MODE_MSB            _u(0)
-#define I2C_IC_CON_MASTER_MODE_LSB            _u(0)
-#define I2C_IC_CON_MASTER_MODE_ACCESS         "RW"
+#define I2C_IC_CON_MASTER_MODE_RESET  _u(0x1)
+#define I2C_IC_CON_MASTER_MODE_BITS   _u(0x00000001)
+#define I2C_IC_CON_MASTER_MODE_MSB    _u(0)
+#define I2C_IC_CON_MASTER_MODE_LSB    _u(0)
+#define I2C_IC_CON_MASTER_MODE_ACCESS "RW"
 #define I2C_IC_CON_MASTER_MODE_VALUE_DISABLED _u(0x0)
-#define I2C_IC_CON_MASTER_MODE_VALUE_ENABLED  _u(0x1)
+#define I2C_IC_CON_MASTER_MODE_VALUE_ENABLED _u(0x1)
 // =============================================================================
 // Register    : I2C_IC_TAR
 // Description : I2C Target Address Register
@@ -307,17 +309,15 @@
 //               GC_OR_START and use IC_TAR normally - 1: perform special I2C
 //               command as specified in Device_ID or GC_OR_START bit Reset
 //               value: 0x0
-//               0x0 -> Disables programming of GENERAL_CALL or START_BYTE
-//               transmission
-//               0x1 -> Enables programming of GENERAL_CALL or START_BYTE
-//               transmission
-#define I2C_IC_TAR_SPECIAL_RESET          _u(0x0)
-#define I2C_IC_TAR_SPECIAL_BITS           _u(0x00000800)
-#define I2C_IC_TAR_SPECIAL_MSB            _u(11)
-#define I2C_IC_TAR_SPECIAL_LSB            _u(11)
-#define I2C_IC_TAR_SPECIAL_ACCESS         "RW"
+//               0x0 -> Disables programming of GENERAL_CALL or START_BYTE transmission
+//               0x1 -> Enables programming of GENERAL_CALL or START_BYTE transmission
+#define I2C_IC_TAR_SPECIAL_RESET  _u(0x0)
+#define I2C_IC_TAR_SPECIAL_BITS   _u(0x00000800)
+#define I2C_IC_TAR_SPECIAL_MSB    _u(11)
+#define I2C_IC_TAR_SPECIAL_LSB    _u(11)
+#define I2C_IC_TAR_SPECIAL_ACCESS "RW"
 #define I2C_IC_TAR_SPECIAL_VALUE_DISABLED _u(0x0)
-#define I2C_IC_TAR_SPECIAL_VALUE_ENABLED  _u(0x1)
+#define I2C_IC_TAR_SPECIAL_VALUE_ENABLED _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_TAR_GC_OR_START
 // Description : If bit 11 (SPECIAL) is set to 1 and bit 13(Device-ID) is set to
@@ -330,13 +330,13 @@
 //               value (bit 11) is cleared. - 1: START BYTE Reset value: 0x0
 //               0x0 -> GENERAL_CALL byte transmission
 //               0x1 -> START byte transmission
-#define I2C_IC_TAR_GC_OR_START_RESET              _u(0x0)
-#define I2C_IC_TAR_GC_OR_START_BITS               _u(0x00000400)
-#define I2C_IC_TAR_GC_OR_START_MSB                _u(10)
-#define I2C_IC_TAR_GC_OR_START_LSB                _u(10)
-#define I2C_IC_TAR_GC_OR_START_ACCESS             "RW"
+#define I2C_IC_TAR_GC_OR_START_RESET  _u(0x0)
+#define I2C_IC_TAR_GC_OR_START_BITS   _u(0x00000400)
+#define I2C_IC_TAR_GC_OR_START_MSB    _u(10)
+#define I2C_IC_TAR_GC_OR_START_LSB    _u(10)
+#define I2C_IC_TAR_GC_OR_START_ACCESS "RW"
 #define I2C_IC_TAR_GC_OR_START_VALUE_GENERAL_CALL _u(0x0)
-#define I2C_IC_TAR_GC_OR_START_VALUE_START_BYTE   _u(0x1)
+#define I2C_IC_TAR_GC_OR_START_VALUE_START_BYTE _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_TAR_IC_TAR
 // Description : This is the target address for any master transaction. When
@@ -421,13 +421,13 @@
 //               FIRST_DATA_BYTE status.
 //               0x0 -> Sequential data byte received
 //               0x1 -> Non sequential data byte received
-#define I2C_IC_DATA_CMD_FIRST_DATA_BYTE_RESET          _u(0x0)
-#define I2C_IC_DATA_CMD_FIRST_DATA_BYTE_BITS           _u(0x00000800)
-#define I2C_IC_DATA_CMD_FIRST_DATA_BYTE_MSB            _u(11)
-#define I2C_IC_DATA_CMD_FIRST_DATA_BYTE_LSB            _u(11)
-#define I2C_IC_DATA_CMD_FIRST_DATA_BYTE_ACCESS         "RO"
+#define I2C_IC_DATA_CMD_FIRST_DATA_BYTE_RESET  _u(0x0)
+#define I2C_IC_DATA_CMD_FIRST_DATA_BYTE_BITS   _u(0x00000800)
+#define I2C_IC_DATA_CMD_FIRST_DATA_BYTE_MSB    _u(11)
+#define I2C_IC_DATA_CMD_FIRST_DATA_BYTE_LSB    _u(11)
+#define I2C_IC_DATA_CMD_FIRST_DATA_BYTE_ACCESS "RO"
 #define I2C_IC_DATA_CMD_FIRST_DATA_BYTE_VALUE_INACTIVE _u(0x0)
-#define I2C_IC_DATA_CMD_FIRST_DATA_BYTE_VALUE_ACTIVE   _u(0x1)
+#define I2C_IC_DATA_CMD_FIRST_DATA_BYTE_VALUE_ACTIVE _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_DATA_CMD_RESTART
 // Description : This bit controls whether a RESTART is issued before the byte
@@ -447,13 +447,13 @@
 //               Reset value: 0x0
 //               0x0 -> Don't Issue RESTART before this command
 //               0x1 -> Issue RESTART before this command
-#define I2C_IC_DATA_CMD_RESTART_RESET         _u(0x0)
-#define I2C_IC_DATA_CMD_RESTART_BITS          _u(0x00000400)
-#define I2C_IC_DATA_CMD_RESTART_MSB           _u(10)
-#define I2C_IC_DATA_CMD_RESTART_LSB           _u(10)
-#define I2C_IC_DATA_CMD_RESTART_ACCESS        "SC"
+#define I2C_IC_DATA_CMD_RESTART_RESET  _u(0x0)
+#define I2C_IC_DATA_CMD_RESTART_BITS   _u(0x00000400)
+#define I2C_IC_DATA_CMD_RESTART_MSB    _u(10)
+#define I2C_IC_DATA_CMD_RESTART_LSB    _u(10)
+#define I2C_IC_DATA_CMD_RESTART_ACCESS "SC"
 #define I2C_IC_DATA_CMD_RESTART_VALUE_DISABLE _u(0x0)
-#define I2C_IC_DATA_CMD_RESTART_VALUE_ENABLE  _u(0x1)
+#define I2C_IC_DATA_CMD_RESTART_VALUE_ENABLE _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_DATA_CMD_STOP
 // Description : This bit controls whether a STOP is issued after the byte is
@@ -471,13 +471,13 @@
 //               is available in the Tx FIFO. Reset value: 0x0
 //               0x0 -> Don't Issue STOP after this command
 //               0x1 -> Issue STOP after this command
-#define I2C_IC_DATA_CMD_STOP_RESET         _u(0x0)
-#define I2C_IC_DATA_CMD_STOP_BITS          _u(0x00000200)
-#define I2C_IC_DATA_CMD_STOP_MSB           _u(9)
-#define I2C_IC_DATA_CMD_STOP_LSB           _u(9)
-#define I2C_IC_DATA_CMD_STOP_ACCESS        "SC"
+#define I2C_IC_DATA_CMD_STOP_RESET  _u(0x0)
+#define I2C_IC_DATA_CMD_STOP_BITS   _u(0x00000200)
+#define I2C_IC_DATA_CMD_STOP_MSB    _u(9)
+#define I2C_IC_DATA_CMD_STOP_LSB    _u(9)
+#define I2C_IC_DATA_CMD_STOP_ACCESS "SC"
 #define I2C_IC_DATA_CMD_STOP_VALUE_DISABLE _u(0x0)
-#define I2C_IC_DATA_CMD_STOP_VALUE_ENABLE  _u(0x1)
+#define I2C_IC_DATA_CMD_STOP_VALUE_ENABLE _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_DATA_CMD_CMD
 // Description : This bit controls whether a read or a write is performed. This
@@ -502,13 +502,13 @@
 //               Reset value: 0x0
 //               0x0 -> Master Write Command
 //               0x1 -> Master Read Command
-#define I2C_IC_DATA_CMD_CMD_RESET       _u(0x0)
-#define I2C_IC_DATA_CMD_CMD_BITS        _u(0x00000100)
-#define I2C_IC_DATA_CMD_CMD_MSB         _u(8)
-#define I2C_IC_DATA_CMD_CMD_LSB         _u(8)
-#define I2C_IC_DATA_CMD_CMD_ACCESS      "SC"
+#define I2C_IC_DATA_CMD_CMD_RESET  _u(0x0)
+#define I2C_IC_DATA_CMD_CMD_BITS   _u(0x00000100)
+#define I2C_IC_DATA_CMD_CMD_MSB    _u(8)
+#define I2C_IC_DATA_CMD_CMD_LSB    _u(8)
+#define I2C_IC_DATA_CMD_CMD_ACCESS "SC"
 #define I2C_IC_DATA_CMD_CMD_VALUE_WRITE _u(0x0)
-#define I2C_IC_DATA_CMD_CMD_VALUE_READ  _u(0x1)
+#define I2C_IC_DATA_CMD_CMD_VALUE_READ _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_DATA_CMD_DAT
 // Description : This register contains the data to be transmitted or received
@@ -626,9 +626,9 @@
 // Field       : I2C_IC_FS_SCL_LCNT_IC_FS_SCL_LCNT
 // Description : This register must be set before any I2C bus transaction can
 //               take place to ensure proper I/O timing. This register sets the
-//               SCL clock low period count for fast speed. It is used in
-//               high-speed mode to send the Master Code and START BYTE or
-//               General CALL. For more information, refer to 'IC_CLK Frequency
+//               SCL clock low period count for fast speed. It is used in high-
+//               speed mode to send the Master Code and START BYTE or General
+//               CALL. For more information, refer to 'IC_CLK Frequency
 //               Configuration'.
 //
 //               This register goes away and becomes read-only returning 0s if
@@ -669,13 +669,13 @@
 //               Reset value: 0x0
 //               0x0 -> R_RESTART_DET interrupt is inactive
 //               0x1 -> R_RESTART_DET interrupt is active
-#define I2C_IC_INTR_STAT_R_RESTART_DET_RESET          _u(0x0)
-#define I2C_IC_INTR_STAT_R_RESTART_DET_BITS           _u(0x00001000)
-#define I2C_IC_INTR_STAT_R_RESTART_DET_MSB            _u(12)
-#define I2C_IC_INTR_STAT_R_RESTART_DET_LSB            _u(12)
-#define I2C_IC_INTR_STAT_R_RESTART_DET_ACCESS         "RO"
+#define I2C_IC_INTR_STAT_R_RESTART_DET_RESET  _u(0x0)
+#define I2C_IC_INTR_STAT_R_RESTART_DET_BITS   _u(0x00001000)
+#define I2C_IC_INTR_STAT_R_RESTART_DET_MSB    _u(12)
+#define I2C_IC_INTR_STAT_R_RESTART_DET_LSB    _u(12)
+#define I2C_IC_INTR_STAT_R_RESTART_DET_ACCESS "RO"
 #define I2C_IC_INTR_STAT_R_RESTART_DET_VALUE_INACTIVE _u(0x0)
-#define I2C_IC_INTR_STAT_R_RESTART_DET_VALUE_ACTIVE   _u(0x1)
+#define I2C_IC_INTR_STAT_R_RESTART_DET_VALUE_ACTIVE _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_INTR_STAT_R_GEN_CALL
 // Description : See IC_RAW_INTR_STAT for a detailed description of R_GEN_CALL
@@ -684,13 +684,13 @@
 //               Reset value: 0x0
 //               0x0 -> R_GEN_CALL interrupt is inactive
 //               0x1 -> R_GEN_CALL interrupt is active
-#define I2C_IC_INTR_STAT_R_GEN_CALL_RESET          _u(0x0)
-#define I2C_IC_INTR_STAT_R_GEN_CALL_BITS           _u(0x00000800)
-#define I2C_IC_INTR_STAT_R_GEN_CALL_MSB            _u(11)
-#define I2C_IC_INTR_STAT_R_GEN_CALL_LSB            _u(11)
-#define I2C_IC_INTR_STAT_R_GEN_CALL_ACCESS         "RO"
+#define I2C_IC_INTR_STAT_R_GEN_CALL_RESET  _u(0x0)
+#define I2C_IC_INTR_STAT_R_GEN_CALL_BITS   _u(0x00000800)
+#define I2C_IC_INTR_STAT_R_GEN_CALL_MSB    _u(11)
+#define I2C_IC_INTR_STAT_R_GEN_CALL_LSB    _u(11)
+#define I2C_IC_INTR_STAT_R_GEN_CALL_ACCESS "RO"
 #define I2C_IC_INTR_STAT_R_GEN_CALL_VALUE_INACTIVE _u(0x0)
-#define I2C_IC_INTR_STAT_R_GEN_CALL_VALUE_ACTIVE   _u(0x1)
+#define I2C_IC_INTR_STAT_R_GEN_CALL_VALUE_ACTIVE _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_INTR_STAT_R_START_DET
 // Description : See IC_RAW_INTR_STAT for a detailed description of R_START_DET
@@ -699,13 +699,13 @@
 //               Reset value: 0x0
 //               0x0 -> R_START_DET interrupt is inactive
 //               0x1 -> R_START_DET interrupt is active
-#define I2C_IC_INTR_STAT_R_START_DET_RESET          _u(0x0)
-#define I2C_IC_INTR_STAT_R_START_DET_BITS           _u(0x00000400)
-#define I2C_IC_INTR_STAT_R_START_DET_MSB            _u(10)
-#define I2C_IC_INTR_STAT_R_START_DET_LSB            _u(10)
-#define I2C_IC_INTR_STAT_R_START_DET_ACCESS         "RO"
+#define I2C_IC_INTR_STAT_R_START_DET_RESET  _u(0x0)
+#define I2C_IC_INTR_STAT_R_START_DET_BITS   _u(0x00000400)
+#define I2C_IC_INTR_STAT_R_START_DET_MSB    _u(10)
+#define I2C_IC_INTR_STAT_R_START_DET_LSB    _u(10)
+#define I2C_IC_INTR_STAT_R_START_DET_ACCESS "RO"
 #define I2C_IC_INTR_STAT_R_START_DET_VALUE_INACTIVE _u(0x0)
-#define I2C_IC_INTR_STAT_R_START_DET_VALUE_ACTIVE   _u(0x1)
+#define I2C_IC_INTR_STAT_R_START_DET_VALUE_ACTIVE _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_INTR_STAT_R_STOP_DET
 // Description : See IC_RAW_INTR_STAT for a detailed description of R_STOP_DET
@@ -714,13 +714,13 @@
 //               Reset value: 0x0
 //               0x0 -> R_STOP_DET interrupt is inactive
 //               0x1 -> R_STOP_DET interrupt is active
-#define I2C_IC_INTR_STAT_R_STOP_DET_RESET          _u(0x0)
-#define I2C_IC_INTR_STAT_R_STOP_DET_BITS           _u(0x00000200)
-#define I2C_IC_INTR_STAT_R_STOP_DET_MSB            _u(9)
-#define I2C_IC_INTR_STAT_R_STOP_DET_LSB            _u(9)
-#define I2C_IC_INTR_STAT_R_STOP_DET_ACCESS         "RO"
+#define I2C_IC_INTR_STAT_R_STOP_DET_RESET  _u(0x0)
+#define I2C_IC_INTR_STAT_R_STOP_DET_BITS   _u(0x00000200)
+#define I2C_IC_INTR_STAT_R_STOP_DET_MSB    _u(9)
+#define I2C_IC_INTR_STAT_R_STOP_DET_LSB    _u(9)
+#define I2C_IC_INTR_STAT_R_STOP_DET_ACCESS "RO"
 #define I2C_IC_INTR_STAT_R_STOP_DET_VALUE_INACTIVE _u(0x0)
-#define I2C_IC_INTR_STAT_R_STOP_DET_VALUE_ACTIVE   _u(0x1)
+#define I2C_IC_INTR_STAT_R_STOP_DET_VALUE_ACTIVE _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_INTR_STAT_R_ACTIVITY
 // Description : See IC_RAW_INTR_STAT for a detailed description of R_ACTIVITY
@@ -729,13 +729,13 @@
 //               Reset value: 0x0
 //               0x0 -> R_ACTIVITY interrupt is inactive
 //               0x1 -> R_ACTIVITY interrupt is active
-#define I2C_IC_INTR_STAT_R_ACTIVITY_RESET          _u(0x0)
-#define I2C_IC_INTR_STAT_R_ACTIVITY_BITS           _u(0x00000100)
-#define I2C_IC_INTR_STAT_R_ACTIVITY_MSB            _u(8)
-#define I2C_IC_INTR_STAT_R_ACTIVITY_LSB            _u(8)
-#define I2C_IC_INTR_STAT_R_ACTIVITY_ACCESS         "RO"
+#define I2C_IC_INTR_STAT_R_ACTIVITY_RESET  _u(0x0)
+#define I2C_IC_INTR_STAT_R_ACTIVITY_BITS   _u(0x00000100)
+#define I2C_IC_INTR_STAT_R_ACTIVITY_MSB    _u(8)
+#define I2C_IC_INTR_STAT_R_ACTIVITY_LSB    _u(8)
+#define I2C_IC_INTR_STAT_R_ACTIVITY_ACCESS "RO"
 #define I2C_IC_INTR_STAT_R_ACTIVITY_VALUE_INACTIVE _u(0x0)
-#define I2C_IC_INTR_STAT_R_ACTIVITY_VALUE_ACTIVE   _u(0x1)
+#define I2C_IC_INTR_STAT_R_ACTIVITY_VALUE_ACTIVE _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_INTR_STAT_R_RX_DONE
 // Description : See IC_RAW_INTR_STAT for a detailed description of R_RX_DONE
@@ -744,13 +744,13 @@
 //               Reset value: 0x0
 //               0x0 -> R_RX_DONE interrupt is inactive
 //               0x1 -> R_RX_DONE interrupt is active
-#define I2C_IC_INTR_STAT_R_RX_DONE_RESET          _u(0x0)
-#define I2C_IC_INTR_STAT_R_RX_DONE_BITS           _u(0x00000080)
-#define I2C_IC_INTR_STAT_R_RX_DONE_MSB            _u(7)
-#define I2C_IC_INTR_STAT_R_RX_DONE_LSB            _u(7)
-#define I2C_IC_INTR_STAT_R_RX_DONE_ACCESS         "RO"
+#define I2C_IC_INTR_STAT_R_RX_DONE_RESET  _u(0x0)
+#define I2C_IC_INTR_STAT_R_RX_DONE_BITS   _u(0x00000080)
+#define I2C_IC_INTR_STAT_R_RX_DONE_MSB    _u(7)
+#define I2C_IC_INTR_STAT_R_RX_DONE_LSB    _u(7)
+#define I2C_IC_INTR_STAT_R_RX_DONE_ACCESS "RO"
 #define I2C_IC_INTR_STAT_R_RX_DONE_VALUE_INACTIVE _u(0x0)
-#define I2C_IC_INTR_STAT_R_RX_DONE_VALUE_ACTIVE   _u(0x1)
+#define I2C_IC_INTR_STAT_R_RX_DONE_VALUE_ACTIVE _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_INTR_STAT_R_TX_ABRT
 // Description : See IC_RAW_INTR_STAT for a detailed description of R_TX_ABRT
@@ -759,13 +759,13 @@
 //               Reset value: 0x0
 //               0x0 -> R_TX_ABRT interrupt is inactive
 //               0x1 -> R_TX_ABRT interrupt is active
-#define I2C_IC_INTR_STAT_R_TX_ABRT_RESET          _u(0x0)
-#define I2C_IC_INTR_STAT_R_TX_ABRT_BITS           _u(0x00000040)
-#define I2C_IC_INTR_STAT_R_TX_ABRT_MSB            _u(6)
-#define I2C_IC_INTR_STAT_R_TX_ABRT_LSB            _u(6)
-#define I2C_IC_INTR_STAT_R_TX_ABRT_ACCESS         "RO"
+#define I2C_IC_INTR_STAT_R_TX_ABRT_RESET  _u(0x0)
+#define I2C_IC_INTR_STAT_R_TX_ABRT_BITS   _u(0x00000040)
+#define I2C_IC_INTR_STAT_R_TX_ABRT_MSB    _u(6)
+#define I2C_IC_INTR_STAT_R_TX_ABRT_LSB    _u(6)
+#define I2C_IC_INTR_STAT_R_TX_ABRT_ACCESS "RO"
 #define I2C_IC_INTR_STAT_R_TX_ABRT_VALUE_INACTIVE _u(0x0)
-#define I2C_IC_INTR_STAT_R_TX_ABRT_VALUE_ACTIVE   _u(0x1)
+#define I2C_IC_INTR_STAT_R_TX_ABRT_VALUE_ACTIVE _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_INTR_STAT_R_RD_REQ
 // Description : See IC_RAW_INTR_STAT for a detailed description of R_RD_REQ
@@ -774,13 +774,13 @@
 //               Reset value: 0x0
 //               0x0 -> R_RD_REQ interrupt is inactive
 //               0x1 -> R_RD_REQ interrupt is active
-#define I2C_IC_INTR_STAT_R_RD_REQ_RESET          _u(0x0)
-#define I2C_IC_INTR_STAT_R_RD_REQ_BITS           _u(0x00000020)
-#define I2C_IC_INTR_STAT_R_RD_REQ_MSB            _u(5)
-#define I2C_IC_INTR_STAT_R_RD_REQ_LSB            _u(5)
-#define I2C_IC_INTR_STAT_R_RD_REQ_ACCESS         "RO"
+#define I2C_IC_INTR_STAT_R_RD_REQ_RESET  _u(0x0)
+#define I2C_IC_INTR_STAT_R_RD_REQ_BITS   _u(0x00000020)
+#define I2C_IC_INTR_STAT_R_RD_REQ_MSB    _u(5)
+#define I2C_IC_INTR_STAT_R_RD_REQ_LSB    _u(5)
+#define I2C_IC_INTR_STAT_R_RD_REQ_ACCESS "RO"
 #define I2C_IC_INTR_STAT_R_RD_REQ_VALUE_INACTIVE _u(0x0)
-#define I2C_IC_INTR_STAT_R_RD_REQ_VALUE_ACTIVE   _u(0x1)
+#define I2C_IC_INTR_STAT_R_RD_REQ_VALUE_ACTIVE _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_INTR_STAT_R_TX_EMPTY
 // Description : See IC_RAW_INTR_STAT for a detailed description of R_TX_EMPTY
@@ -789,13 +789,13 @@
 //               Reset value: 0x0
 //               0x0 -> R_TX_EMPTY interrupt is inactive
 //               0x1 -> R_TX_EMPTY interrupt is active
-#define I2C_IC_INTR_STAT_R_TX_EMPTY_RESET          _u(0x0)
-#define I2C_IC_INTR_STAT_R_TX_EMPTY_BITS           _u(0x00000010)
-#define I2C_IC_INTR_STAT_R_TX_EMPTY_MSB            _u(4)
-#define I2C_IC_INTR_STAT_R_TX_EMPTY_LSB            _u(4)
-#define I2C_IC_INTR_STAT_R_TX_EMPTY_ACCESS         "RO"
+#define I2C_IC_INTR_STAT_R_TX_EMPTY_RESET  _u(0x0)
+#define I2C_IC_INTR_STAT_R_TX_EMPTY_BITS   _u(0x00000010)
+#define I2C_IC_INTR_STAT_R_TX_EMPTY_MSB    _u(4)
+#define I2C_IC_INTR_STAT_R_TX_EMPTY_LSB    _u(4)
+#define I2C_IC_INTR_STAT_R_TX_EMPTY_ACCESS "RO"
 #define I2C_IC_INTR_STAT_R_TX_EMPTY_VALUE_INACTIVE _u(0x0)
-#define I2C_IC_INTR_STAT_R_TX_EMPTY_VALUE_ACTIVE   _u(0x1)
+#define I2C_IC_INTR_STAT_R_TX_EMPTY_VALUE_ACTIVE _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_INTR_STAT_R_TX_OVER
 // Description : See IC_RAW_INTR_STAT for a detailed description of R_TX_OVER
@@ -804,13 +804,13 @@
 //               Reset value: 0x0
 //               0x0 -> R_TX_OVER interrupt is inactive
 //               0x1 -> R_TX_OVER interrupt is active
-#define I2C_IC_INTR_STAT_R_TX_OVER_RESET          _u(0x0)
-#define I2C_IC_INTR_STAT_R_TX_OVER_BITS           _u(0x00000008)
-#define I2C_IC_INTR_STAT_R_TX_OVER_MSB            _u(3)
-#define I2C_IC_INTR_STAT_R_TX_OVER_LSB            _u(3)
-#define I2C_IC_INTR_STAT_R_TX_OVER_ACCESS         "RO"
+#define I2C_IC_INTR_STAT_R_TX_OVER_RESET  _u(0x0)
+#define I2C_IC_INTR_STAT_R_TX_OVER_BITS   _u(0x00000008)
+#define I2C_IC_INTR_STAT_R_TX_OVER_MSB    _u(3)
+#define I2C_IC_INTR_STAT_R_TX_OVER_LSB    _u(3)
+#define I2C_IC_INTR_STAT_R_TX_OVER_ACCESS "RO"
 #define I2C_IC_INTR_STAT_R_TX_OVER_VALUE_INACTIVE _u(0x0)
-#define I2C_IC_INTR_STAT_R_TX_OVER_VALUE_ACTIVE   _u(0x1)
+#define I2C_IC_INTR_STAT_R_TX_OVER_VALUE_ACTIVE _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_INTR_STAT_R_RX_FULL
 // Description : See IC_RAW_INTR_STAT for a detailed description of R_RX_FULL
@@ -819,13 +819,13 @@
 //               Reset value: 0x0
 //               0x0 -> R_RX_FULL interrupt is inactive
 //               0x1 -> R_RX_FULL interrupt is active
-#define I2C_IC_INTR_STAT_R_RX_FULL_RESET          _u(0x0)
-#define I2C_IC_INTR_STAT_R_RX_FULL_BITS           _u(0x00000004)
-#define I2C_IC_INTR_STAT_R_RX_FULL_MSB            _u(2)
-#define I2C_IC_INTR_STAT_R_RX_FULL_LSB            _u(2)
-#define I2C_IC_INTR_STAT_R_RX_FULL_ACCESS         "RO"
+#define I2C_IC_INTR_STAT_R_RX_FULL_RESET  _u(0x0)
+#define I2C_IC_INTR_STAT_R_RX_FULL_BITS   _u(0x00000004)
+#define I2C_IC_INTR_STAT_R_RX_FULL_MSB    _u(2)
+#define I2C_IC_INTR_STAT_R_RX_FULL_LSB    _u(2)
+#define I2C_IC_INTR_STAT_R_RX_FULL_ACCESS "RO"
 #define I2C_IC_INTR_STAT_R_RX_FULL_VALUE_INACTIVE _u(0x0)
-#define I2C_IC_INTR_STAT_R_RX_FULL_VALUE_ACTIVE   _u(0x1)
+#define I2C_IC_INTR_STAT_R_RX_FULL_VALUE_ACTIVE _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_INTR_STAT_R_RX_OVER
 // Description : See IC_RAW_INTR_STAT for a detailed description of R_RX_OVER
@@ -834,13 +834,13 @@
 //               Reset value: 0x0
 //               0x0 -> R_RX_OVER interrupt is inactive
 //               0x1 -> R_RX_OVER interrupt is active
-#define I2C_IC_INTR_STAT_R_RX_OVER_RESET          _u(0x0)
-#define I2C_IC_INTR_STAT_R_RX_OVER_BITS           _u(0x00000002)
-#define I2C_IC_INTR_STAT_R_RX_OVER_MSB            _u(1)
-#define I2C_IC_INTR_STAT_R_RX_OVER_LSB            _u(1)
-#define I2C_IC_INTR_STAT_R_RX_OVER_ACCESS         "RO"
+#define I2C_IC_INTR_STAT_R_RX_OVER_RESET  _u(0x0)
+#define I2C_IC_INTR_STAT_R_RX_OVER_BITS   _u(0x00000002)
+#define I2C_IC_INTR_STAT_R_RX_OVER_MSB    _u(1)
+#define I2C_IC_INTR_STAT_R_RX_OVER_LSB    _u(1)
+#define I2C_IC_INTR_STAT_R_RX_OVER_ACCESS "RO"
 #define I2C_IC_INTR_STAT_R_RX_OVER_VALUE_INACTIVE _u(0x0)
-#define I2C_IC_INTR_STAT_R_RX_OVER_VALUE_ACTIVE   _u(0x1)
+#define I2C_IC_INTR_STAT_R_RX_OVER_VALUE_ACTIVE _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_INTR_STAT_R_RX_UNDER
 // Description : See IC_RAW_INTR_STAT for a detailed description of R_RX_UNDER
@@ -849,13 +849,13 @@
 //               Reset value: 0x0
 //               0x0 -> RX_UNDER interrupt is inactive
 //               0x1 -> RX_UNDER interrupt is active
-#define I2C_IC_INTR_STAT_R_RX_UNDER_RESET          _u(0x0)
-#define I2C_IC_INTR_STAT_R_RX_UNDER_BITS           _u(0x00000001)
-#define I2C_IC_INTR_STAT_R_RX_UNDER_MSB            _u(0)
-#define I2C_IC_INTR_STAT_R_RX_UNDER_LSB            _u(0)
-#define I2C_IC_INTR_STAT_R_RX_UNDER_ACCESS         "RO"
+#define I2C_IC_INTR_STAT_R_RX_UNDER_RESET  _u(0x0)
+#define I2C_IC_INTR_STAT_R_RX_UNDER_BITS   _u(0x00000001)
+#define I2C_IC_INTR_STAT_R_RX_UNDER_MSB    _u(0)
+#define I2C_IC_INTR_STAT_R_RX_UNDER_LSB    _u(0)
+#define I2C_IC_INTR_STAT_R_RX_UNDER_ACCESS "RO"
 #define I2C_IC_INTR_STAT_R_RX_UNDER_VALUE_INACTIVE _u(0x0)
-#define I2C_IC_INTR_STAT_R_RX_UNDER_VALUE_ACTIVE   _u(0x1)
+#define I2C_IC_INTR_STAT_R_RX_UNDER_VALUE_ACTIVE _u(0x1)
 // =============================================================================
 // Register    : I2C_IC_INTR_MASK
 // Description : I2C Interrupt Mask Register.
@@ -874,12 +874,12 @@
 //               Reset value: 0x0
 //               0x0 -> RESTART_DET interrupt is masked
 //               0x1 -> RESTART_DET interrupt is unmasked
-#define I2C_IC_INTR_MASK_M_RESTART_DET_RESET          _u(0x0)
-#define I2C_IC_INTR_MASK_M_RESTART_DET_BITS           _u(0x00001000)
-#define I2C_IC_INTR_MASK_M_RESTART_DET_MSB            _u(12)
-#define I2C_IC_INTR_MASK_M_RESTART_DET_LSB            _u(12)
-#define I2C_IC_INTR_MASK_M_RESTART_DET_ACCESS         "RW"
-#define I2C_IC_INTR_MASK_M_RESTART_DET_VALUE_ENABLED  _u(0x0)
+#define I2C_IC_INTR_MASK_M_RESTART_DET_RESET  _u(0x0)
+#define I2C_IC_INTR_MASK_M_RESTART_DET_BITS   _u(0x00001000)
+#define I2C_IC_INTR_MASK_M_RESTART_DET_MSB    _u(12)
+#define I2C_IC_INTR_MASK_M_RESTART_DET_LSB    _u(12)
+#define I2C_IC_INTR_MASK_M_RESTART_DET_ACCESS "RW"
+#define I2C_IC_INTR_MASK_M_RESTART_DET_VALUE_ENABLED _u(0x0)
 #define I2C_IC_INTR_MASK_M_RESTART_DET_VALUE_DISABLED _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_INTR_MASK_M_GEN_CALL
@@ -889,12 +889,12 @@
 //               Reset value: 0x1
 //               0x0 -> GEN_CALL interrupt is masked
 //               0x1 -> GEN_CALL interrupt is unmasked
-#define I2C_IC_INTR_MASK_M_GEN_CALL_RESET          _u(0x1)
-#define I2C_IC_INTR_MASK_M_GEN_CALL_BITS           _u(0x00000800)
-#define I2C_IC_INTR_MASK_M_GEN_CALL_MSB            _u(11)
-#define I2C_IC_INTR_MASK_M_GEN_CALL_LSB            _u(11)
-#define I2C_IC_INTR_MASK_M_GEN_CALL_ACCESS         "RW"
-#define I2C_IC_INTR_MASK_M_GEN_CALL_VALUE_ENABLED  _u(0x0)
+#define I2C_IC_INTR_MASK_M_GEN_CALL_RESET  _u(0x1)
+#define I2C_IC_INTR_MASK_M_GEN_CALL_BITS   _u(0x00000800)
+#define I2C_IC_INTR_MASK_M_GEN_CALL_MSB    _u(11)
+#define I2C_IC_INTR_MASK_M_GEN_CALL_LSB    _u(11)
+#define I2C_IC_INTR_MASK_M_GEN_CALL_ACCESS "RW"
+#define I2C_IC_INTR_MASK_M_GEN_CALL_VALUE_ENABLED _u(0x0)
 #define I2C_IC_INTR_MASK_M_GEN_CALL_VALUE_DISABLED _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_INTR_MASK_M_START_DET
@@ -904,12 +904,12 @@
 //               Reset value: 0x0
 //               0x0 -> START_DET interrupt is masked
 //               0x1 -> START_DET interrupt is unmasked
-#define I2C_IC_INTR_MASK_M_START_DET_RESET          _u(0x0)
-#define I2C_IC_INTR_MASK_M_START_DET_BITS           _u(0x00000400)
-#define I2C_IC_INTR_MASK_M_START_DET_MSB            _u(10)
-#define I2C_IC_INTR_MASK_M_START_DET_LSB            _u(10)
-#define I2C_IC_INTR_MASK_M_START_DET_ACCESS         "RW"
-#define I2C_IC_INTR_MASK_M_START_DET_VALUE_ENABLED  _u(0x0)
+#define I2C_IC_INTR_MASK_M_START_DET_RESET  _u(0x0)
+#define I2C_IC_INTR_MASK_M_START_DET_BITS   _u(0x00000400)
+#define I2C_IC_INTR_MASK_M_START_DET_MSB    _u(10)
+#define I2C_IC_INTR_MASK_M_START_DET_LSB    _u(10)
+#define I2C_IC_INTR_MASK_M_START_DET_ACCESS "RW"
+#define I2C_IC_INTR_MASK_M_START_DET_VALUE_ENABLED _u(0x0)
 #define I2C_IC_INTR_MASK_M_START_DET_VALUE_DISABLED _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_INTR_MASK_M_STOP_DET
@@ -919,12 +919,12 @@
 //               Reset value: 0x0
 //               0x0 -> STOP_DET interrupt is masked
 //               0x1 -> STOP_DET interrupt is unmasked
-#define I2C_IC_INTR_MASK_M_STOP_DET_RESET          _u(0x0)
-#define I2C_IC_INTR_MASK_M_STOP_DET_BITS           _u(0x00000200)
-#define I2C_IC_INTR_MASK_M_STOP_DET_MSB            _u(9)
-#define I2C_IC_INTR_MASK_M_STOP_DET_LSB            _u(9)
-#define I2C_IC_INTR_MASK_M_STOP_DET_ACCESS         "RW"
-#define I2C_IC_INTR_MASK_M_STOP_DET_VALUE_ENABLED  _u(0x0)
+#define I2C_IC_INTR_MASK_M_STOP_DET_RESET  _u(0x0)
+#define I2C_IC_INTR_MASK_M_STOP_DET_BITS   _u(0x00000200)
+#define I2C_IC_INTR_MASK_M_STOP_DET_MSB    _u(9)
+#define I2C_IC_INTR_MASK_M_STOP_DET_LSB    _u(9)
+#define I2C_IC_INTR_MASK_M_STOP_DET_ACCESS "RW"
+#define I2C_IC_INTR_MASK_M_STOP_DET_VALUE_ENABLED _u(0x0)
 #define I2C_IC_INTR_MASK_M_STOP_DET_VALUE_DISABLED _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_INTR_MASK_M_ACTIVITY
@@ -934,12 +934,12 @@
 //               Reset value: 0x0
 //               0x0 -> ACTIVITY interrupt is masked
 //               0x1 -> ACTIVITY interrupt is unmasked
-#define I2C_IC_INTR_MASK_M_ACTIVITY_RESET          _u(0x0)
-#define I2C_IC_INTR_MASK_M_ACTIVITY_BITS           _u(0x00000100)
-#define I2C_IC_INTR_MASK_M_ACTIVITY_MSB            _u(8)
-#define I2C_IC_INTR_MASK_M_ACTIVITY_LSB            _u(8)
-#define I2C_IC_INTR_MASK_M_ACTIVITY_ACCESS         "RW"
-#define I2C_IC_INTR_MASK_M_ACTIVITY_VALUE_ENABLED  _u(0x0)
+#define I2C_IC_INTR_MASK_M_ACTIVITY_RESET  _u(0x0)
+#define I2C_IC_INTR_MASK_M_ACTIVITY_BITS   _u(0x00000100)
+#define I2C_IC_INTR_MASK_M_ACTIVITY_MSB    _u(8)
+#define I2C_IC_INTR_MASK_M_ACTIVITY_LSB    _u(8)
+#define I2C_IC_INTR_MASK_M_ACTIVITY_ACCESS "RW"
+#define I2C_IC_INTR_MASK_M_ACTIVITY_VALUE_ENABLED _u(0x0)
 #define I2C_IC_INTR_MASK_M_ACTIVITY_VALUE_DISABLED _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_INTR_MASK_M_RX_DONE
@@ -949,12 +949,12 @@
 //               Reset value: 0x1
 //               0x0 -> RX_DONE interrupt is masked
 //               0x1 -> RX_DONE interrupt is unmasked
-#define I2C_IC_INTR_MASK_M_RX_DONE_RESET          _u(0x1)
-#define I2C_IC_INTR_MASK_M_RX_DONE_BITS           _u(0x00000080)
-#define I2C_IC_INTR_MASK_M_RX_DONE_MSB            _u(7)
-#define I2C_IC_INTR_MASK_M_RX_DONE_LSB            _u(7)
-#define I2C_IC_INTR_MASK_M_RX_DONE_ACCESS         "RW"
-#define I2C_IC_INTR_MASK_M_RX_DONE_VALUE_ENABLED  _u(0x0)
+#define I2C_IC_INTR_MASK_M_RX_DONE_RESET  _u(0x1)
+#define I2C_IC_INTR_MASK_M_RX_DONE_BITS   _u(0x00000080)
+#define I2C_IC_INTR_MASK_M_RX_DONE_MSB    _u(7)
+#define I2C_IC_INTR_MASK_M_RX_DONE_LSB    _u(7)
+#define I2C_IC_INTR_MASK_M_RX_DONE_ACCESS "RW"
+#define I2C_IC_INTR_MASK_M_RX_DONE_VALUE_ENABLED _u(0x0)
 #define I2C_IC_INTR_MASK_M_RX_DONE_VALUE_DISABLED _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_INTR_MASK_M_TX_ABRT
@@ -964,12 +964,12 @@
 //               Reset value: 0x1
 //               0x0 -> TX_ABORT interrupt is masked
 //               0x1 -> TX_ABORT interrupt is unmasked
-#define I2C_IC_INTR_MASK_M_TX_ABRT_RESET          _u(0x1)
-#define I2C_IC_INTR_MASK_M_TX_ABRT_BITS           _u(0x00000040)
-#define I2C_IC_INTR_MASK_M_TX_ABRT_MSB            _u(6)
-#define I2C_IC_INTR_MASK_M_TX_ABRT_LSB            _u(6)
-#define I2C_IC_INTR_MASK_M_TX_ABRT_ACCESS         "RW"
-#define I2C_IC_INTR_MASK_M_TX_ABRT_VALUE_ENABLED  _u(0x0)
+#define I2C_IC_INTR_MASK_M_TX_ABRT_RESET  _u(0x1)
+#define I2C_IC_INTR_MASK_M_TX_ABRT_BITS   _u(0x00000040)
+#define I2C_IC_INTR_MASK_M_TX_ABRT_MSB    _u(6)
+#define I2C_IC_INTR_MASK_M_TX_ABRT_LSB    _u(6)
+#define I2C_IC_INTR_MASK_M_TX_ABRT_ACCESS "RW"
+#define I2C_IC_INTR_MASK_M_TX_ABRT_VALUE_ENABLED _u(0x0)
 #define I2C_IC_INTR_MASK_M_TX_ABRT_VALUE_DISABLED _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_INTR_MASK_M_RD_REQ
@@ -978,12 +978,12 @@
 //               Reset value: 0x1
 //               0x0 -> RD_REQ interrupt is masked
 //               0x1 -> RD_REQ interrupt is unmasked
-#define I2C_IC_INTR_MASK_M_RD_REQ_RESET          _u(0x1)
-#define I2C_IC_INTR_MASK_M_RD_REQ_BITS           _u(0x00000020)
-#define I2C_IC_INTR_MASK_M_RD_REQ_MSB            _u(5)
-#define I2C_IC_INTR_MASK_M_RD_REQ_LSB            _u(5)
-#define I2C_IC_INTR_MASK_M_RD_REQ_ACCESS         "RW"
-#define I2C_IC_INTR_MASK_M_RD_REQ_VALUE_ENABLED  _u(0x0)
+#define I2C_IC_INTR_MASK_M_RD_REQ_RESET  _u(0x1)
+#define I2C_IC_INTR_MASK_M_RD_REQ_BITS   _u(0x00000020)
+#define I2C_IC_INTR_MASK_M_RD_REQ_MSB    _u(5)
+#define I2C_IC_INTR_MASK_M_RD_REQ_LSB    _u(5)
+#define I2C_IC_INTR_MASK_M_RD_REQ_ACCESS "RW"
+#define I2C_IC_INTR_MASK_M_RD_REQ_VALUE_ENABLED _u(0x0)
 #define I2C_IC_INTR_MASK_M_RD_REQ_VALUE_DISABLED _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_INTR_MASK_M_TX_EMPTY
@@ -993,12 +993,12 @@
 //               Reset value: 0x1
 //               0x0 -> TX_EMPTY interrupt is masked
 //               0x1 -> TX_EMPTY interrupt is unmasked
-#define I2C_IC_INTR_MASK_M_TX_EMPTY_RESET          _u(0x1)
-#define I2C_IC_INTR_MASK_M_TX_EMPTY_BITS           _u(0x00000010)
-#define I2C_IC_INTR_MASK_M_TX_EMPTY_MSB            _u(4)
-#define I2C_IC_INTR_MASK_M_TX_EMPTY_LSB            _u(4)
-#define I2C_IC_INTR_MASK_M_TX_EMPTY_ACCESS         "RW"
-#define I2C_IC_INTR_MASK_M_TX_EMPTY_VALUE_ENABLED  _u(0x0)
+#define I2C_IC_INTR_MASK_M_TX_EMPTY_RESET  _u(0x1)
+#define I2C_IC_INTR_MASK_M_TX_EMPTY_BITS   _u(0x00000010)
+#define I2C_IC_INTR_MASK_M_TX_EMPTY_MSB    _u(4)
+#define I2C_IC_INTR_MASK_M_TX_EMPTY_LSB    _u(4)
+#define I2C_IC_INTR_MASK_M_TX_EMPTY_ACCESS "RW"
+#define I2C_IC_INTR_MASK_M_TX_EMPTY_VALUE_ENABLED _u(0x0)
 #define I2C_IC_INTR_MASK_M_TX_EMPTY_VALUE_DISABLED _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_INTR_MASK_M_TX_OVER
@@ -1008,12 +1008,12 @@
 //               Reset value: 0x1
 //               0x0 -> TX_OVER interrupt is masked
 //               0x1 -> TX_OVER interrupt is unmasked
-#define I2C_IC_INTR_MASK_M_TX_OVER_RESET          _u(0x1)
-#define I2C_IC_INTR_MASK_M_TX_OVER_BITS           _u(0x00000008)
-#define I2C_IC_INTR_MASK_M_TX_OVER_MSB            _u(3)
-#define I2C_IC_INTR_MASK_M_TX_OVER_LSB            _u(3)
-#define I2C_IC_INTR_MASK_M_TX_OVER_ACCESS         "RW"
-#define I2C_IC_INTR_MASK_M_TX_OVER_VALUE_ENABLED  _u(0x0)
+#define I2C_IC_INTR_MASK_M_TX_OVER_RESET  _u(0x1)
+#define I2C_IC_INTR_MASK_M_TX_OVER_BITS   _u(0x00000008)
+#define I2C_IC_INTR_MASK_M_TX_OVER_MSB    _u(3)
+#define I2C_IC_INTR_MASK_M_TX_OVER_LSB    _u(3)
+#define I2C_IC_INTR_MASK_M_TX_OVER_ACCESS "RW"
+#define I2C_IC_INTR_MASK_M_TX_OVER_VALUE_ENABLED _u(0x0)
 #define I2C_IC_INTR_MASK_M_TX_OVER_VALUE_DISABLED _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_INTR_MASK_M_RX_FULL
@@ -1023,12 +1023,12 @@
 //               Reset value: 0x1
 //               0x0 -> RX_FULL interrupt is masked
 //               0x1 -> RX_FULL interrupt is unmasked
-#define I2C_IC_INTR_MASK_M_RX_FULL_RESET          _u(0x1)
-#define I2C_IC_INTR_MASK_M_RX_FULL_BITS           _u(0x00000004)
-#define I2C_IC_INTR_MASK_M_RX_FULL_MSB            _u(2)
-#define I2C_IC_INTR_MASK_M_RX_FULL_LSB            _u(2)
-#define I2C_IC_INTR_MASK_M_RX_FULL_ACCESS         "RW"
-#define I2C_IC_INTR_MASK_M_RX_FULL_VALUE_ENABLED  _u(0x0)
+#define I2C_IC_INTR_MASK_M_RX_FULL_RESET  _u(0x1)
+#define I2C_IC_INTR_MASK_M_RX_FULL_BITS   _u(0x00000004)
+#define I2C_IC_INTR_MASK_M_RX_FULL_MSB    _u(2)
+#define I2C_IC_INTR_MASK_M_RX_FULL_LSB    _u(2)
+#define I2C_IC_INTR_MASK_M_RX_FULL_ACCESS "RW"
+#define I2C_IC_INTR_MASK_M_RX_FULL_VALUE_ENABLED _u(0x0)
 #define I2C_IC_INTR_MASK_M_RX_FULL_VALUE_DISABLED _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_INTR_MASK_M_RX_OVER
@@ -1038,12 +1038,12 @@
 //               Reset value: 0x1
 //               0x0 -> RX_OVER interrupt is masked
 //               0x1 -> RX_OVER interrupt is unmasked
-#define I2C_IC_INTR_MASK_M_RX_OVER_RESET          _u(0x1)
-#define I2C_IC_INTR_MASK_M_RX_OVER_BITS           _u(0x00000002)
-#define I2C_IC_INTR_MASK_M_RX_OVER_MSB            _u(1)
-#define I2C_IC_INTR_MASK_M_RX_OVER_LSB            _u(1)
-#define I2C_IC_INTR_MASK_M_RX_OVER_ACCESS         "RW"
-#define I2C_IC_INTR_MASK_M_RX_OVER_VALUE_ENABLED  _u(0x0)
+#define I2C_IC_INTR_MASK_M_RX_OVER_RESET  _u(0x1)
+#define I2C_IC_INTR_MASK_M_RX_OVER_BITS   _u(0x00000002)
+#define I2C_IC_INTR_MASK_M_RX_OVER_MSB    _u(1)
+#define I2C_IC_INTR_MASK_M_RX_OVER_LSB    _u(1)
+#define I2C_IC_INTR_MASK_M_RX_OVER_ACCESS "RW"
+#define I2C_IC_INTR_MASK_M_RX_OVER_VALUE_ENABLED _u(0x0)
 #define I2C_IC_INTR_MASK_M_RX_OVER_VALUE_DISABLED _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_INTR_MASK_M_RX_UNDER
@@ -1053,12 +1053,12 @@
 //               Reset value: 0x1
 //               0x0 -> RX_UNDER interrupt is masked
 //               0x1 -> RX_UNDER interrupt is unmasked
-#define I2C_IC_INTR_MASK_M_RX_UNDER_RESET          _u(0x1)
-#define I2C_IC_INTR_MASK_M_RX_UNDER_BITS           _u(0x00000001)
-#define I2C_IC_INTR_MASK_M_RX_UNDER_MSB            _u(0)
-#define I2C_IC_INTR_MASK_M_RX_UNDER_LSB            _u(0)
-#define I2C_IC_INTR_MASK_M_RX_UNDER_ACCESS         "RW"
-#define I2C_IC_INTR_MASK_M_RX_UNDER_VALUE_ENABLED  _u(0x0)
+#define I2C_IC_INTR_MASK_M_RX_UNDER_RESET  _u(0x1)
+#define I2C_IC_INTR_MASK_M_RX_UNDER_BITS   _u(0x00000001)
+#define I2C_IC_INTR_MASK_M_RX_UNDER_MSB    _u(0)
+#define I2C_IC_INTR_MASK_M_RX_UNDER_LSB    _u(0)
+#define I2C_IC_INTR_MASK_M_RX_UNDER_ACCESS "RW"
+#define I2C_IC_INTR_MASK_M_RX_UNDER_VALUE_ENABLED _u(0x0)
 #define I2C_IC_INTR_MASK_M_RX_UNDER_VALUE_DISABLED _u(0x1)
 // =============================================================================
 // Register    : I2C_IC_RAW_INTR_STAT
@@ -1085,13 +1085,13 @@
 //               Reset value: 0x0
 //               0x0 -> RESTART_DET interrupt is inactive
 //               0x1 -> RESTART_DET interrupt is active
-#define I2C_IC_RAW_INTR_STAT_RESTART_DET_RESET          _u(0x0)
-#define I2C_IC_RAW_INTR_STAT_RESTART_DET_BITS           _u(0x00001000)
-#define I2C_IC_RAW_INTR_STAT_RESTART_DET_MSB            _u(12)
-#define I2C_IC_RAW_INTR_STAT_RESTART_DET_LSB            _u(12)
-#define I2C_IC_RAW_INTR_STAT_RESTART_DET_ACCESS         "RO"
+#define I2C_IC_RAW_INTR_STAT_RESTART_DET_RESET  _u(0x0)
+#define I2C_IC_RAW_INTR_STAT_RESTART_DET_BITS   _u(0x00001000)
+#define I2C_IC_RAW_INTR_STAT_RESTART_DET_MSB    _u(12)
+#define I2C_IC_RAW_INTR_STAT_RESTART_DET_LSB    _u(12)
+#define I2C_IC_RAW_INTR_STAT_RESTART_DET_ACCESS "RO"
 #define I2C_IC_RAW_INTR_STAT_RESTART_DET_VALUE_INACTIVE _u(0x0)
-#define I2C_IC_RAW_INTR_STAT_RESTART_DET_VALUE_ACTIVE   _u(0x1)
+#define I2C_IC_RAW_INTR_STAT_RESTART_DET_VALUE_ACTIVE _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_RAW_INTR_STAT_GEN_CALL
 // Description : Set only when a General Call address is received and it is
@@ -1103,13 +1103,13 @@
 //               Reset value: 0x0
 //               0x0 -> GEN_CALL interrupt is inactive
 //               0x1 -> GEN_CALL interrupt is active
-#define I2C_IC_RAW_INTR_STAT_GEN_CALL_RESET          _u(0x0)
-#define I2C_IC_RAW_INTR_STAT_GEN_CALL_BITS           _u(0x00000800)
-#define I2C_IC_RAW_INTR_STAT_GEN_CALL_MSB            _u(11)
-#define I2C_IC_RAW_INTR_STAT_GEN_CALL_LSB            _u(11)
-#define I2C_IC_RAW_INTR_STAT_GEN_CALL_ACCESS         "RO"
+#define I2C_IC_RAW_INTR_STAT_GEN_CALL_RESET  _u(0x0)
+#define I2C_IC_RAW_INTR_STAT_GEN_CALL_BITS   _u(0x00000800)
+#define I2C_IC_RAW_INTR_STAT_GEN_CALL_MSB    _u(11)
+#define I2C_IC_RAW_INTR_STAT_GEN_CALL_LSB    _u(11)
+#define I2C_IC_RAW_INTR_STAT_GEN_CALL_ACCESS "RO"
 #define I2C_IC_RAW_INTR_STAT_GEN_CALL_VALUE_INACTIVE _u(0x0)
-#define I2C_IC_RAW_INTR_STAT_GEN_CALL_VALUE_ACTIVE   _u(0x1)
+#define I2C_IC_RAW_INTR_STAT_GEN_CALL_VALUE_ACTIVE _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_RAW_INTR_STAT_START_DET
 // Description : Indicates whether a START or RESTART condition has occurred on
@@ -1119,13 +1119,13 @@
 //               Reset value: 0x0
 //               0x0 -> START_DET interrupt is inactive
 //               0x1 -> START_DET interrupt is active
-#define I2C_IC_RAW_INTR_STAT_START_DET_RESET          _u(0x0)
-#define I2C_IC_RAW_INTR_STAT_START_DET_BITS           _u(0x00000400)
-#define I2C_IC_RAW_INTR_STAT_START_DET_MSB            _u(10)
-#define I2C_IC_RAW_INTR_STAT_START_DET_LSB            _u(10)
-#define I2C_IC_RAW_INTR_STAT_START_DET_ACCESS         "RO"
+#define I2C_IC_RAW_INTR_STAT_START_DET_RESET  _u(0x0)
+#define I2C_IC_RAW_INTR_STAT_START_DET_BITS   _u(0x00000400)
+#define I2C_IC_RAW_INTR_STAT_START_DET_MSB    _u(10)
+#define I2C_IC_RAW_INTR_STAT_START_DET_LSB    _u(10)
+#define I2C_IC_RAW_INTR_STAT_START_DET_ACCESS "RO"
 #define I2C_IC_RAW_INTR_STAT_START_DET_VALUE_INACTIVE _u(0x0)
-#define I2C_IC_RAW_INTR_STAT_START_DET_VALUE_ACTIVE   _u(0x1)
+#define I2C_IC_RAW_INTR_STAT_START_DET_VALUE_ACTIVE _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_RAW_INTR_STAT_STOP_DET
 // Description : Indicates whether a STOP condition has occurred on the I2C
@@ -1148,13 +1148,13 @@
 //               Reset value: 0x0
 //               0x0 -> STOP_DET interrupt is inactive
 //               0x1 -> STOP_DET interrupt is active
-#define I2C_IC_RAW_INTR_STAT_STOP_DET_RESET          _u(0x0)
-#define I2C_IC_RAW_INTR_STAT_STOP_DET_BITS           _u(0x00000200)
-#define I2C_IC_RAW_INTR_STAT_STOP_DET_MSB            _u(9)
-#define I2C_IC_RAW_INTR_STAT_STOP_DET_LSB            _u(9)
-#define I2C_IC_RAW_INTR_STAT_STOP_DET_ACCESS         "RO"
+#define I2C_IC_RAW_INTR_STAT_STOP_DET_RESET  _u(0x0)
+#define I2C_IC_RAW_INTR_STAT_STOP_DET_BITS   _u(0x00000200)
+#define I2C_IC_RAW_INTR_STAT_STOP_DET_MSB    _u(9)
+#define I2C_IC_RAW_INTR_STAT_STOP_DET_LSB    _u(9)
+#define I2C_IC_RAW_INTR_STAT_STOP_DET_ACCESS "RO"
 #define I2C_IC_RAW_INTR_STAT_STOP_DET_VALUE_INACTIVE _u(0x0)
-#define I2C_IC_RAW_INTR_STAT_STOP_DET_VALUE_ACTIVE   _u(0x1)
+#define I2C_IC_RAW_INTR_STAT_STOP_DET_VALUE_ACTIVE _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_RAW_INTR_STAT_ACTIVITY
 // Description : This bit captures DW_apb_i2c activity and stays set until it is
@@ -1168,13 +1168,13 @@
 //               Reset value: 0x0
 //               0x0 -> RAW_INTR_ACTIVITY interrupt is inactive
 //               0x1 -> RAW_INTR_ACTIVITY interrupt is active
-#define I2C_IC_RAW_INTR_STAT_ACTIVITY_RESET          _u(0x0)
-#define I2C_IC_RAW_INTR_STAT_ACTIVITY_BITS           _u(0x00000100)
-#define I2C_IC_RAW_INTR_STAT_ACTIVITY_MSB            _u(8)
-#define I2C_IC_RAW_INTR_STAT_ACTIVITY_LSB            _u(8)
-#define I2C_IC_RAW_INTR_STAT_ACTIVITY_ACCESS         "RO"
+#define I2C_IC_RAW_INTR_STAT_ACTIVITY_RESET  _u(0x0)
+#define I2C_IC_RAW_INTR_STAT_ACTIVITY_BITS   _u(0x00000100)
+#define I2C_IC_RAW_INTR_STAT_ACTIVITY_MSB    _u(8)
+#define I2C_IC_RAW_INTR_STAT_ACTIVITY_LSB    _u(8)
+#define I2C_IC_RAW_INTR_STAT_ACTIVITY_ACCESS "RO"
 #define I2C_IC_RAW_INTR_STAT_ACTIVITY_VALUE_INACTIVE _u(0x0)
-#define I2C_IC_RAW_INTR_STAT_ACTIVITY_VALUE_ACTIVE   _u(0x1)
+#define I2C_IC_RAW_INTR_STAT_ACTIVITY_VALUE_ACTIVE _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_RAW_INTR_STAT_RX_DONE
 // Description : When the DW_apb_i2c is acting as a slave-transmitter, this bit
@@ -1185,13 +1185,13 @@
 //               Reset value: 0x0
 //               0x0 -> RX_DONE interrupt is inactive
 //               0x1 -> RX_DONE interrupt is active
-#define I2C_IC_RAW_INTR_STAT_RX_DONE_RESET          _u(0x0)
-#define I2C_IC_RAW_INTR_STAT_RX_DONE_BITS           _u(0x00000080)
-#define I2C_IC_RAW_INTR_STAT_RX_DONE_MSB            _u(7)
-#define I2C_IC_RAW_INTR_STAT_RX_DONE_LSB            _u(7)
-#define I2C_IC_RAW_INTR_STAT_RX_DONE_ACCESS         "RO"
+#define I2C_IC_RAW_INTR_STAT_RX_DONE_RESET  _u(0x0)
+#define I2C_IC_RAW_INTR_STAT_RX_DONE_BITS   _u(0x00000080)
+#define I2C_IC_RAW_INTR_STAT_RX_DONE_MSB    _u(7)
+#define I2C_IC_RAW_INTR_STAT_RX_DONE_LSB    _u(7)
+#define I2C_IC_RAW_INTR_STAT_RX_DONE_ACCESS "RO"
 #define I2C_IC_RAW_INTR_STAT_RX_DONE_VALUE_INACTIVE _u(0x0)
-#define I2C_IC_RAW_INTR_STAT_RX_DONE_VALUE_ACTIVE   _u(0x1)
+#define I2C_IC_RAW_INTR_STAT_RX_DONE_VALUE_ACTIVE _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_RAW_INTR_STAT_TX_ABRT
 // Description : This bit indicates if DW_apb_i2c, as an I2C transmitter, is
@@ -1211,13 +1211,13 @@
 //               Reset value: 0x0
 //               0x0 -> TX_ABRT interrupt is inactive
 //               0x1 -> TX_ABRT interrupt is active
-#define I2C_IC_RAW_INTR_STAT_TX_ABRT_RESET          _u(0x0)
-#define I2C_IC_RAW_INTR_STAT_TX_ABRT_BITS           _u(0x00000040)
-#define I2C_IC_RAW_INTR_STAT_TX_ABRT_MSB            _u(6)
-#define I2C_IC_RAW_INTR_STAT_TX_ABRT_LSB            _u(6)
-#define I2C_IC_RAW_INTR_STAT_TX_ABRT_ACCESS         "RO"
+#define I2C_IC_RAW_INTR_STAT_TX_ABRT_RESET  _u(0x0)
+#define I2C_IC_RAW_INTR_STAT_TX_ABRT_BITS   _u(0x00000040)
+#define I2C_IC_RAW_INTR_STAT_TX_ABRT_MSB    _u(6)
+#define I2C_IC_RAW_INTR_STAT_TX_ABRT_LSB    _u(6)
+#define I2C_IC_RAW_INTR_STAT_TX_ABRT_ACCESS "RO"
 #define I2C_IC_RAW_INTR_STAT_TX_ABRT_VALUE_INACTIVE _u(0x0)
-#define I2C_IC_RAW_INTR_STAT_TX_ABRT_VALUE_ACTIVE   _u(0x1)
+#define I2C_IC_RAW_INTR_STAT_TX_ABRT_VALUE_ACTIVE _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_RAW_INTR_STAT_RD_REQ
 // Description : This bit is set to 1 when DW_apb_i2c is acting as a slave and
@@ -1233,13 +1233,13 @@
 //               Reset value: 0x0
 //               0x0 -> RD_REQ interrupt is inactive
 //               0x1 -> RD_REQ interrupt is active
-#define I2C_IC_RAW_INTR_STAT_RD_REQ_RESET          _u(0x0)
-#define I2C_IC_RAW_INTR_STAT_RD_REQ_BITS           _u(0x00000020)
-#define I2C_IC_RAW_INTR_STAT_RD_REQ_MSB            _u(5)
-#define I2C_IC_RAW_INTR_STAT_RD_REQ_LSB            _u(5)
-#define I2C_IC_RAW_INTR_STAT_RD_REQ_ACCESS         "RO"
+#define I2C_IC_RAW_INTR_STAT_RD_REQ_RESET  _u(0x0)
+#define I2C_IC_RAW_INTR_STAT_RD_REQ_BITS   _u(0x00000020)
+#define I2C_IC_RAW_INTR_STAT_RD_REQ_MSB    _u(5)
+#define I2C_IC_RAW_INTR_STAT_RD_REQ_LSB    _u(5)
+#define I2C_IC_RAW_INTR_STAT_RD_REQ_ACCESS "RO"
 #define I2C_IC_RAW_INTR_STAT_RD_REQ_VALUE_INACTIVE _u(0x0)
-#define I2C_IC_RAW_INTR_STAT_RD_REQ_VALUE_ACTIVE   _u(0x1)
+#define I2C_IC_RAW_INTR_STAT_RD_REQ_VALUE_ACTIVE _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_RAW_INTR_STAT_TX_EMPTY
 // Description : The behavior of the TX_EMPTY interrupt status differs based on
@@ -1261,13 +1261,13 @@
 //               Reset value: 0x0.
 //               0x0 -> TX_EMPTY interrupt is inactive
 //               0x1 -> TX_EMPTY interrupt is active
-#define I2C_IC_RAW_INTR_STAT_TX_EMPTY_RESET          _u(0x0)
-#define I2C_IC_RAW_INTR_STAT_TX_EMPTY_BITS           _u(0x00000010)
-#define I2C_IC_RAW_INTR_STAT_TX_EMPTY_MSB            _u(4)
-#define I2C_IC_RAW_INTR_STAT_TX_EMPTY_LSB            _u(4)
-#define I2C_IC_RAW_INTR_STAT_TX_EMPTY_ACCESS         "RO"
+#define I2C_IC_RAW_INTR_STAT_TX_EMPTY_RESET  _u(0x0)
+#define I2C_IC_RAW_INTR_STAT_TX_EMPTY_BITS   _u(0x00000010)
+#define I2C_IC_RAW_INTR_STAT_TX_EMPTY_MSB    _u(4)
+#define I2C_IC_RAW_INTR_STAT_TX_EMPTY_LSB    _u(4)
+#define I2C_IC_RAW_INTR_STAT_TX_EMPTY_ACCESS "RO"
 #define I2C_IC_RAW_INTR_STAT_TX_EMPTY_VALUE_INACTIVE _u(0x0)
-#define I2C_IC_RAW_INTR_STAT_TX_EMPTY_VALUE_ACTIVE   _u(0x1)
+#define I2C_IC_RAW_INTR_STAT_TX_EMPTY_VALUE_ACTIVE _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_RAW_INTR_STAT_TX_OVER
 // Description : Set during transmit if the transmit buffer is filled to
@@ -1280,13 +1280,13 @@
 //               Reset value: 0x0
 //               0x0 -> TX_OVER interrupt is inactive
 //               0x1 -> TX_OVER interrupt is active
-#define I2C_IC_RAW_INTR_STAT_TX_OVER_RESET          _u(0x0)
-#define I2C_IC_RAW_INTR_STAT_TX_OVER_BITS           _u(0x00000008)
-#define I2C_IC_RAW_INTR_STAT_TX_OVER_MSB            _u(3)
-#define I2C_IC_RAW_INTR_STAT_TX_OVER_LSB            _u(3)
-#define I2C_IC_RAW_INTR_STAT_TX_OVER_ACCESS         "RO"
+#define I2C_IC_RAW_INTR_STAT_TX_OVER_RESET  _u(0x0)
+#define I2C_IC_RAW_INTR_STAT_TX_OVER_BITS   _u(0x00000008)
+#define I2C_IC_RAW_INTR_STAT_TX_OVER_MSB    _u(3)
+#define I2C_IC_RAW_INTR_STAT_TX_OVER_LSB    _u(3)
+#define I2C_IC_RAW_INTR_STAT_TX_OVER_ACCESS "RO"
 #define I2C_IC_RAW_INTR_STAT_TX_OVER_VALUE_INACTIVE _u(0x0)
-#define I2C_IC_RAW_INTR_STAT_TX_OVER_VALUE_ACTIVE   _u(0x1)
+#define I2C_IC_RAW_INTR_STAT_TX_OVER_VALUE_ACTIVE _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_RAW_INTR_STAT_RX_FULL
 // Description : Set when the receive buffer reaches or goes above the RX_TL
@@ -1300,13 +1300,13 @@
 //               Reset value: 0x0
 //               0x0 -> RX_FULL interrupt is inactive
 //               0x1 -> RX_FULL interrupt is active
-#define I2C_IC_RAW_INTR_STAT_RX_FULL_RESET          _u(0x0)
-#define I2C_IC_RAW_INTR_STAT_RX_FULL_BITS           _u(0x00000004)
-#define I2C_IC_RAW_INTR_STAT_RX_FULL_MSB            _u(2)
-#define I2C_IC_RAW_INTR_STAT_RX_FULL_LSB            _u(2)
-#define I2C_IC_RAW_INTR_STAT_RX_FULL_ACCESS         "RO"
+#define I2C_IC_RAW_INTR_STAT_RX_FULL_RESET  _u(0x0)
+#define I2C_IC_RAW_INTR_STAT_RX_FULL_BITS   _u(0x00000004)
+#define I2C_IC_RAW_INTR_STAT_RX_FULL_MSB    _u(2)
+#define I2C_IC_RAW_INTR_STAT_RX_FULL_LSB    _u(2)
+#define I2C_IC_RAW_INTR_STAT_RX_FULL_ACCESS "RO"
 #define I2C_IC_RAW_INTR_STAT_RX_FULL_VALUE_INACTIVE _u(0x0)
-#define I2C_IC_RAW_INTR_STAT_RX_FULL_VALUE_ACTIVE   _u(0x1)
+#define I2C_IC_RAW_INTR_STAT_RX_FULL_VALUE_ACTIVE _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_RAW_INTR_STAT_RX_OVER
 // Description : Set if the receive buffer is completely filled to
@@ -1324,13 +1324,13 @@
 //               Reset value: 0x0
 //               0x0 -> RX_OVER interrupt is inactive
 //               0x1 -> RX_OVER interrupt is active
-#define I2C_IC_RAW_INTR_STAT_RX_OVER_RESET          _u(0x0)
-#define I2C_IC_RAW_INTR_STAT_RX_OVER_BITS           _u(0x00000002)
-#define I2C_IC_RAW_INTR_STAT_RX_OVER_MSB            _u(1)
-#define I2C_IC_RAW_INTR_STAT_RX_OVER_LSB            _u(1)
-#define I2C_IC_RAW_INTR_STAT_RX_OVER_ACCESS         "RO"
+#define I2C_IC_RAW_INTR_STAT_RX_OVER_RESET  _u(0x0)
+#define I2C_IC_RAW_INTR_STAT_RX_OVER_BITS   _u(0x00000002)
+#define I2C_IC_RAW_INTR_STAT_RX_OVER_MSB    _u(1)
+#define I2C_IC_RAW_INTR_STAT_RX_OVER_LSB    _u(1)
+#define I2C_IC_RAW_INTR_STAT_RX_OVER_ACCESS "RO"
 #define I2C_IC_RAW_INTR_STAT_RX_OVER_VALUE_INACTIVE _u(0x0)
-#define I2C_IC_RAW_INTR_STAT_RX_OVER_VALUE_ACTIVE   _u(0x1)
+#define I2C_IC_RAW_INTR_STAT_RX_OVER_VALUE_ACTIVE _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_RAW_INTR_STAT_RX_UNDER
 // Description : Set if the processor attempts to read the receive buffer when
@@ -1342,13 +1342,13 @@
 //               Reset value: 0x0
 //               0x0 -> RX_UNDER interrupt is inactive
 //               0x1 -> RX_UNDER interrupt is active
-#define I2C_IC_RAW_INTR_STAT_RX_UNDER_RESET          _u(0x0)
-#define I2C_IC_RAW_INTR_STAT_RX_UNDER_BITS           _u(0x00000001)
-#define I2C_IC_RAW_INTR_STAT_RX_UNDER_MSB            _u(0)
-#define I2C_IC_RAW_INTR_STAT_RX_UNDER_LSB            _u(0)
-#define I2C_IC_RAW_INTR_STAT_RX_UNDER_ACCESS         "RO"
+#define I2C_IC_RAW_INTR_STAT_RX_UNDER_RESET  _u(0x0)
+#define I2C_IC_RAW_INTR_STAT_RX_UNDER_BITS   _u(0x00000001)
+#define I2C_IC_RAW_INTR_STAT_RX_UNDER_MSB    _u(0)
+#define I2C_IC_RAW_INTR_STAT_RX_UNDER_LSB    _u(0)
+#define I2C_IC_RAW_INTR_STAT_RX_UNDER_ACCESS "RO"
 #define I2C_IC_RAW_INTR_STAT_RX_UNDER_VALUE_INACTIVE _u(0x0)
-#define I2C_IC_RAW_INTR_STAT_RX_UNDER_VALUE_ACTIVE   _u(0x1)
+#define I2C_IC_RAW_INTR_STAT_RX_UNDER_VALUE_ACTIVE _u(0x1)
 // =============================================================================
 // Register    : I2C_IC_RX_TL
 // Description : I2C Receive FIFO Threshold Register
@@ -1613,13 +1613,13 @@
 //               value:  IC_TX_CMD_BLOCK_DEFAULT
 //               0x0 -> Tx Command execution not blocked
 //               0x1 -> Tx Command execution blocked
-#define I2C_IC_ENABLE_TX_CMD_BLOCK_RESET             _u(0x0)
-#define I2C_IC_ENABLE_TX_CMD_BLOCK_BITS              _u(0x00000004)
-#define I2C_IC_ENABLE_TX_CMD_BLOCK_MSB               _u(2)
-#define I2C_IC_ENABLE_TX_CMD_BLOCK_LSB               _u(2)
-#define I2C_IC_ENABLE_TX_CMD_BLOCK_ACCESS            "RW"
+#define I2C_IC_ENABLE_TX_CMD_BLOCK_RESET  _u(0x0)
+#define I2C_IC_ENABLE_TX_CMD_BLOCK_BITS   _u(0x00000004)
+#define I2C_IC_ENABLE_TX_CMD_BLOCK_MSB    _u(2)
+#define I2C_IC_ENABLE_TX_CMD_BLOCK_LSB    _u(2)
+#define I2C_IC_ENABLE_TX_CMD_BLOCK_ACCESS "RW"
 #define I2C_IC_ENABLE_TX_CMD_BLOCK_VALUE_NOT_BLOCKED _u(0x0)
-#define I2C_IC_ENABLE_TX_CMD_BLOCK_VALUE_BLOCKED     _u(0x1)
+#define I2C_IC_ENABLE_TX_CMD_BLOCK_VALUE_BLOCKED _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_ENABLE_ABORT
 // Description : When set, the controller initiates the transfer abort. - 0:
@@ -1639,11 +1639,11 @@
 //               Reset value: 0x0
 //               0x0 -> ABORT operation not in progress
 //               0x1 -> ABORT operation in progress
-#define I2C_IC_ENABLE_ABORT_RESET         _u(0x0)
-#define I2C_IC_ENABLE_ABORT_BITS          _u(0x00000002)
-#define I2C_IC_ENABLE_ABORT_MSB           _u(1)
-#define I2C_IC_ENABLE_ABORT_LSB           _u(1)
-#define I2C_IC_ENABLE_ABORT_ACCESS        "RW"
+#define I2C_IC_ENABLE_ABORT_RESET  _u(0x0)
+#define I2C_IC_ENABLE_ABORT_BITS   _u(0x00000002)
+#define I2C_IC_ENABLE_ABORT_MSB    _u(1)
+#define I2C_IC_ENABLE_ABORT_LSB    _u(1)
+#define I2C_IC_ENABLE_ABORT_ACCESS "RW"
 #define I2C_IC_ENABLE_ABORT_VALUE_DISABLE _u(0x0)
 #define I2C_IC_ENABLE_ABORT_VALUE_ENABLED _u(0x1)
 // -----------------------------------------------------------------------------
@@ -1673,13 +1673,13 @@
 //               Reset value: 0x0
 //               0x0 -> I2C is disabled
 //               0x1 -> I2C is enabled
-#define I2C_IC_ENABLE_ENABLE_RESET          _u(0x0)
-#define I2C_IC_ENABLE_ENABLE_BITS           _u(0x00000001)
-#define I2C_IC_ENABLE_ENABLE_MSB            _u(0)
-#define I2C_IC_ENABLE_ENABLE_LSB            _u(0)
-#define I2C_IC_ENABLE_ENABLE_ACCESS         "RW"
+#define I2C_IC_ENABLE_ENABLE_RESET  _u(0x0)
+#define I2C_IC_ENABLE_ENABLE_BITS   _u(0x00000001)
+#define I2C_IC_ENABLE_ENABLE_MSB    _u(0)
+#define I2C_IC_ENABLE_ENABLE_LSB    _u(0)
+#define I2C_IC_ENABLE_ENABLE_ACCESS "RW"
 #define I2C_IC_ENABLE_ENABLE_VALUE_DISABLED _u(0x0)
-#define I2C_IC_ENABLE_ENABLE_VALUE_ENABLED  _u(0x1)
+#define I2C_IC_ENABLE_ENABLE_VALUE_ENABLED _u(0x1)
 // =============================================================================
 // Register    : I2C_IC_STATUS
 // Description : I2C Status Register
@@ -1705,12 +1705,12 @@
 //               DW_apb_i2c is Active Reset value: 0x0
 //               0x0 -> Slave is idle
 //               0x1 -> Slave not idle
-#define I2C_IC_STATUS_SLV_ACTIVITY_RESET        _u(0x0)
-#define I2C_IC_STATUS_SLV_ACTIVITY_BITS         _u(0x00000040)
-#define I2C_IC_STATUS_SLV_ACTIVITY_MSB          _u(6)
-#define I2C_IC_STATUS_SLV_ACTIVITY_LSB          _u(6)
-#define I2C_IC_STATUS_SLV_ACTIVITY_ACCESS       "RO"
-#define I2C_IC_STATUS_SLV_ACTIVITY_VALUE_IDLE   _u(0x0)
+#define I2C_IC_STATUS_SLV_ACTIVITY_RESET  _u(0x0)
+#define I2C_IC_STATUS_SLV_ACTIVITY_BITS   _u(0x00000040)
+#define I2C_IC_STATUS_SLV_ACTIVITY_MSB    _u(6)
+#define I2C_IC_STATUS_SLV_ACTIVITY_LSB    _u(6)
+#define I2C_IC_STATUS_SLV_ACTIVITY_ACCESS "RO"
+#define I2C_IC_STATUS_SLV_ACTIVITY_VALUE_IDLE _u(0x0)
 #define I2C_IC_STATUS_SLV_ACTIVITY_VALUE_ACTIVE _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_STATUS_MST_ACTIVITY
@@ -1724,12 +1724,12 @@
 //               Reset value: 0x0
 //               0x0 -> Master is idle
 //               0x1 -> Master not idle
-#define I2C_IC_STATUS_MST_ACTIVITY_RESET        _u(0x0)
-#define I2C_IC_STATUS_MST_ACTIVITY_BITS         _u(0x00000020)
-#define I2C_IC_STATUS_MST_ACTIVITY_MSB          _u(5)
-#define I2C_IC_STATUS_MST_ACTIVITY_LSB          _u(5)
-#define I2C_IC_STATUS_MST_ACTIVITY_ACCESS       "RO"
-#define I2C_IC_STATUS_MST_ACTIVITY_VALUE_IDLE   _u(0x0)
+#define I2C_IC_STATUS_MST_ACTIVITY_RESET  _u(0x0)
+#define I2C_IC_STATUS_MST_ACTIVITY_BITS   _u(0x00000020)
+#define I2C_IC_STATUS_MST_ACTIVITY_MSB    _u(5)
+#define I2C_IC_STATUS_MST_ACTIVITY_LSB    _u(5)
+#define I2C_IC_STATUS_MST_ACTIVITY_ACCESS "RO"
+#define I2C_IC_STATUS_MST_ACTIVITY_VALUE_IDLE _u(0x0)
 #define I2C_IC_STATUS_MST_ACTIVITY_VALUE_ACTIVE _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_STATUS_RFF
@@ -1740,13 +1740,13 @@
 //               0x0
 //               0x0 -> Rx FIFO not full
 //               0x1 -> Rx FIFO is full
-#define I2C_IC_STATUS_RFF_RESET          _u(0x0)
-#define I2C_IC_STATUS_RFF_BITS           _u(0x00000010)
-#define I2C_IC_STATUS_RFF_MSB            _u(4)
-#define I2C_IC_STATUS_RFF_LSB            _u(4)
-#define I2C_IC_STATUS_RFF_ACCESS         "RO"
+#define I2C_IC_STATUS_RFF_RESET  _u(0x0)
+#define I2C_IC_STATUS_RFF_BITS   _u(0x00000010)
+#define I2C_IC_STATUS_RFF_MSB    _u(4)
+#define I2C_IC_STATUS_RFF_LSB    _u(4)
+#define I2C_IC_STATUS_RFF_ACCESS "RO"
 #define I2C_IC_STATUS_RFF_VALUE_NOT_FULL _u(0x0)
-#define I2C_IC_STATUS_RFF_VALUE_FULL     _u(0x1)
+#define I2C_IC_STATUS_RFF_VALUE_FULL _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_STATUS_RFNE
 // Description : Receive FIFO Not Empty. This bit is set when the receive FIFO
@@ -1755,12 +1755,12 @@
 //               not empty Reset value: 0x0
 //               0x0 -> Rx FIFO is empty
 //               0x1 -> Rx FIFO not empty
-#define I2C_IC_STATUS_RFNE_RESET           _u(0x0)
-#define I2C_IC_STATUS_RFNE_BITS            _u(0x00000008)
-#define I2C_IC_STATUS_RFNE_MSB             _u(3)
-#define I2C_IC_STATUS_RFNE_LSB             _u(3)
-#define I2C_IC_STATUS_RFNE_ACCESS          "RO"
-#define I2C_IC_STATUS_RFNE_VALUE_EMPTY     _u(0x0)
+#define I2C_IC_STATUS_RFNE_RESET  _u(0x0)
+#define I2C_IC_STATUS_RFNE_BITS   _u(0x00000008)
+#define I2C_IC_STATUS_RFNE_MSB    _u(3)
+#define I2C_IC_STATUS_RFNE_LSB    _u(3)
+#define I2C_IC_STATUS_RFNE_ACCESS "RO"
+#define I2C_IC_STATUS_RFNE_VALUE_EMPTY _u(0x0)
 #define I2C_IC_STATUS_RFNE_VALUE_NOT_EMPTY _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_STATUS_TFE
@@ -1771,13 +1771,13 @@
 //               Transmit FIFO is empty Reset value: 0x1
 //               0x0 -> Tx FIFO not empty
 //               0x1 -> Tx FIFO is empty
-#define I2C_IC_STATUS_TFE_RESET           _u(0x1)
-#define I2C_IC_STATUS_TFE_BITS            _u(0x00000004)
-#define I2C_IC_STATUS_TFE_MSB             _u(2)
-#define I2C_IC_STATUS_TFE_LSB             _u(2)
-#define I2C_IC_STATUS_TFE_ACCESS          "RO"
+#define I2C_IC_STATUS_TFE_RESET  _u(0x1)
+#define I2C_IC_STATUS_TFE_BITS   _u(0x00000004)
+#define I2C_IC_STATUS_TFE_MSB    _u(2)
+#define I2C_IC_STATUS_TFE_LSB    _u(2)
+#define I2C_IC_STATUS_TFE_ACCESS "RO"
 #define I2C_IC_STATUS_TFE_VALUE_NON_EMPTY _u(0x0)
-#define I2C_IC_STATUS_TFE_VALUE_EMPTY     _u(0x1)
+#define I2C_IC_STATUS_TFE_VALUE_EMPTY _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_STATUS_TFNF
 // Description : Transmit FIFO Not Full. Set when the transmit FIFO contains one
@@ -1786,25 +1786,25 @@
 //               value: 0x1
 //               0x0 -> Tx FIFO is full
 //               0x1 -> Tx FIFO not full
-#define I2C_IC_STATUS_TFNF_RESET          _u(0x1)
-#define I2C_IC_STATUS_TFNF_BITS           _u(0x00000002)
-#define I2C_IC_STATUS_TFNF_MSB            _u(1)
-#define I2C_IC_STATUS_TFNF_LSB            _u(1)
-#define I2C_IC_STATUS_TFNF_ACCESS         "RO"
-#define I2C_IC_STATUS_TFNF_VALUE_FULL     _u(0x0)
+#define I2C_IC_STATUS_TFNF_RESET  _u(0x1)
+#define I2C_IC_STATUS_TFNF_BITS   _u(0x00000002)
+#define I2C_IC_STATUS_TFNF_MSB    _u(1)
+#define I2C_IC_STATUS_TFNF_LSB    _u(1)
+#define I2C_IC_STATUS_TFNF_ACCESS "RO"
+#define I2C_IC_STATUS_TFNF_VALUE_FULL _u(0x0)
 #define I2C_IC_STATUS_TFNF_VALUE_NOT_FULL _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_STATUS_ACTIVITY
 // Description : I2C Activity Status. Reset value: 0x0
 //               0x0 -> I2C is idle
 //               0x1 -> I2C is active
-#define I2C_IC_STATUS_ACTIVITY_RESET          _u(0x0)
-#define I2C_IC_STATUS_ACTIVITY_BITS           _u(0x00000001)
-#define I2C_IC_STATUS_ACTIVITY_MSB            _u(0)
-#define I2C_IC_STATUS_ACTIVITY_LSB            _u(0)
-#define I2C_IC_STATUS_ACTIVITY_ACCESS         "RO"
+#define I2C_IC_STATUS_ACTIVITY_RESET  _u(0x0)
+#define I2C_IC_STATUS_ACTIVITY_BITS   _u(0x00000001)
+#define I2C_IC_STATUS_ACTIVITY_MSB    _u(0)
+#define I2C_IC_STATUS_ACTIVITY_LSB    _u(0)
+#define I2C_IC_STATUS_ACTIVITY_ACCESS "RO"
 #define I2C_IC_STATUS_ACTIVITY_VALUE_INACTIVE _u(0x0)
-#define I2C_IC_STATUS_ACTIVITY_VALUE_ACTIVE   _u(0x1)
+#define I2C_IC_STATUS_ACTIVITY_VALUE_ACTIVE _u(0x1)
 // =============================================================================
 // Register    : I2C_IC_TXFLR
 // Description : I2C Transmit FIFO Level Register This register contains the
@@ -1944,12 +1944,12 @@
 //               Role of DW_apb_i2c:  Master-Transmitter
 //               0x0 -> Transfer abort detected by master- scenario not present
 //               0x1 -> Transfer abort detected by master
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_USER_ABRT_RESET                          _u(0x0)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_USER_ABRT_BITS                           _u(0x00010000)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_USER_ABRT_MSB                            _u(16)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_USER_ABRT_LSB                            _u(16)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_USER_ABRT_ACCESS                         "RO"
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_USER_ABRT_VALUE_ABRT_USER_ABRT_VOID      _u(0x0)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_USER_ABRT_RESET  _u(0x0)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_USER_ABRT_BITS   _u(0x00010000)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_USER_ABRT_MSB    _u(16)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_USER_ABRT_LSB    _u(16)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_USER_ABRT_ACCESS "RO"
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_USER_ABRT_VALUE_ABRT_USER_ABRT_VOID _u(0x0)
 #define I2C_IC_TX_ABRT_SOURCE_ABRT_USER_ABRT_VALUE_ABRT_USER_ABRT_GENERATED _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_TX_ABRT_SOURCE_ABRT_SLVRD_INTX
@@ -1960,15 +1960,14 @@
 //               Reset value: 0x0
 //
 //               Role of DW_apb_i2c:  Slave-Transmitter
-//               0x0 -> Slave trying to transmit to remote master in read mode-
-//               scenario not present
+//               0x0 -> Slave trying to transmit to remote master in read mode- scenario not present
 //               0x1 -> Slave trying to transmit to remote master in read mode
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_SLVRD_INTX_RESET                           _u(0x0)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_SLVRD_INTX_BITS                            _u(0x00008000)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_SLVRD_INTX_MSB                             _u(15)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_SLVRD_INTX_LSB                             _u(15)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_SLVRD_INTX_ACCESS                          "RO"
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_SLVRD_INTX_VALUE_ABRT_SLVRD_INTX_VOID      _u(0x0)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_SLVRD_INTX_RESET  _u(0x0)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_SLVRD_INTX_BITS   _u(0x00008000)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_SLVRD_INTX_MSB    _u(15)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_SLVRD_INTX_LSB    _u(15)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_SLVRD_INTX_ACCESS "RO"
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_SLVRD_INTX_VALUE_ABRT_SLVRD_INTX_VOID _u(0x0)
 #define I2C_IC_TX_ABRT_SOURCE_ABRT_SLVRD_INTX_VALUE_ABRT_SLVRD_INTX_GENERATED _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_TX_ABRT_SOURCE_ABRT_SLV_ARBLOST
@@ -1984,15 +1983,14 @@
 //               Reset value: 0x0
 //
 //               Role of DW_apb_i2c:  Slave-Transmitter
-//               0x0 -> Slave lost arbitration to remote master- scenario not
-//               present
+//               0x0 -> Slave lost arbitration to remote master- scenario not present
 //               0x1 -> Slave lost arbitration to remote master
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_SLV_ARBLOST_RESET                            _u(0x0)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_SLV_ARBLOST_BITS                             _u(0x00004000)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_SLV_ARBLOST_MSB                              _u(14)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_SLV_ARBLOST_LSB                              _u(14)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_SLV_ARBLOST_ACCESS                           "RO"
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_SLV_ARBLOST_VALUE_ABRT_SLV_ARBLOST_VOID      _u(0x0)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_SLV_ARBLOST_RESET  _u(0x0)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_SLV_ARBLOST_BITS   _u(0x00004000)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_SLV_ARBLOST_MSB    _u(14)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_SLV_ARBLOST_LSB    _u(14)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_SLV_ARBLOST_ACCESS "RO"
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_SLV_ARBLOST_VALUE_ABRT_SLV_ARBLOST_VOID _u(0x0)
 #define I2C_IC_TX_ABRT_SOURCE_ABRT_SLV_ARBLOST_VALUE_ABRT_SLV_ARBLOST_GENERATED _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_TX_ABRT_SOURCE_ABRT_SLVFLUSH_TXFIFO
@@ -2003,16 +2001,14 @@
 //               Reset value: 0x0
 //
 //               Role of DW_apb_i2c:  Slave-Transmitter
-//               0x0 -> Slave flushes existing data in TX-FIFO upon getting read
-//               command- scenario not present
-//               0x1 -> Slave flushes existing data in TX-FIFO upon getting read
-//               command
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_SLVFLUSH_TXFIFO_RESET                                _u(0x0)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_SLVFLUSH_TXFIFO_BITS                                 _u(0x00002000)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_SLVFLUSH_TXFIFO_MSB                                  _u(13)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_SLVFLUSH_TXFIFO_LSB                                  _u(13)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_SLVFLUSH_TXFIFO_ACCESS                               "RO"
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_SLVFLUSH_TXFIFO_VALUE_ABRT_SLVFLUSH_TXFIFO_VOID      _u(0x0)
+//               0x0 -> Slave flushes existing data in TX-FIFO upon getting read command- scenario not present
+//               0x1 -> Slave flushes existing data in TX-FIFO upon getting read command
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_SLVFLUSH_TXFIFO_RESET  _u(0x0)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_SLVFLUSH_TXFIFO_BITS   _u(0x00002000)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_SLVFLUSH_TXFIFO_MSB    _u(13)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_SLVFLUSH_TXFIFO_LSB    _u(13)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_SLVFLUSH_TXFIFO_ACCESS "RO"
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_SLVFLUSH_TXFIFO_VALUE_ABRT_SLVFLUSH_TXFIFO_VOID _u(0x0)
 #define I2C_IC_TX_ABRT_SOURCE_ABRT_SLVFLUSH_TXFIFO_VALUE_ABRT_SLVFLUSH_TXFIFO_GENERATED _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_TX_ABRT_SOURCE_ARB_LOST
@@ -2023,15 +2019,14 @@
 //               Reset value: 0x0
 //
 //               Role of DW_apb_i2c:  Master-Transmitter or Slave-Transmitter
-//               0x0 -> Master or Slave-Transmitter lost arbitration- scenario
-//               not present
+//               0x0 -> Master or Slave-Transmitter lost arbitration- scenario not present
 //               0x1 -> Master or Slave-Transmitter lost arbitration
-#define I2C_IC_TX_ABRT_SOURCE_ARB_LOST_RESET                     _u(0x0)
-#define I2C_IC_TX_ABRT_SOURCE_ARB_LOST_BITS                      _u(0x00001000)
-#define I2C_IC_TX_ABRT_SOURCE_ARB_LOST_MSB                       _u(12)
-#define I2C_IC_TX_ABRT_SOURCE_ARB_LOST_LSB                       _u(12)
-#define I2C_IC_TX_ABRT_SOURCE_ARB_LOST_ACCESS                    "RO"
-#define I2C_IC_TX_ABRT_SOURCE_ARB_LOST_VALUE_ABRT_LOST_VOID      _u(0x0)
+#define I2C_IC_TX_ABRT_SOURCE_ARB_LOST_RESET  _u(0x0)
+#define I2C_IC_TX_ABRT_SOURCE_ARB_LOST_BITS   _u(0x00001000)
+#define I2C_IC_TX_ABRT_SOURCE_ARB_LOST_MSB    _u(12)
+#define I2C_IC_TX_ABRT_SOURCE_ARB_LOST_LSB    _u(12)
+#define I2C_IC_TX_ABRT_SOURCE_ARB_LOST_ACCESS "RO"
+#define I2C_IC_TX_ABRT_SOURCE_ARB_LOST_VALUE_ABRT_LOST_VOID _u(0x0)
 #define I2C_IC_TX_ABRT_SOURCE_ARB_LOST_VALUE_ABRT_LOST_GENERATED _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_TX_ABRT_SOURCE_ABRT_MASTER_DIS
@@ -2041,15 +2036,14 @@
 //               Reset value: 0x0
 //
 //               Role of DW_apb_i2c:  Master-Transmitter or Master-Receiver
-//               0x0 -> User initiating master operation when MASTER disabled-
-//               scenario not present
+//               0x0 -> User initiating master operation when MASTER disabled- scenario not present
 //               0x1 -> User initiating master operation when MASTER disabled
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_MASTER_DIS_RESET                           _u(0x0)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_MASTER_DIS_BITS                            _u(0x00000800)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_MASTER_DIS_MSB                             _u(11)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_MASTER_DIS_LSB                             _u(11)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_MASTER_DIS_ACCESS                          "RO"
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_MASTER_DIS_VALUE_ABRT_MASTER_DIS_VOID      _u(0x0)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_MASTER_DIS_RESET  _u(0x0)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_MASTER_DIS_BITS   _u(0x00000800)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_MASTER_DIS_MSB    _u(11)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_MASTER_DIS_LSB    _u(11)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_MASTER_DIS_ACCESS "RO"
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_MASTER_DIS_VALUE_ABRT_MASTER_DIS_VOID _u(0x0)
 #define I2C_IC_TX_ABRT_SOURCE_ABRT_MASTER_DIS_VALUE_ABRT_MASTER_DIS_GENERATED _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_TX_ABRT_SOURCE_ABRT_10B_RD_NORSTRT
@@ -2060,16 +2054,14 @@
 //               Reset value: 0x0
 //
 //               Role of DW_apb_i2c:  Master-Receiver
-//               0x0 -> Master not trying to read in 10Bit addressing mode when
-//               RESTART disabled
-//               0x1 -> Master trying to read in 10Bit addressing mode when
-//               RESTART disabled
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_10B_RD_NORSTRT_RESET                       _u(0x0)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_10B_RD_NORSTRT_BITS                        _u(0x00000400)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_10B_RD_NORSTRT_MSB                         _u(10)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_10B_RD_NORSTRT_LSB                         _u(10)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_10B_RD_NORSTRT_ACCESS                      "RO"
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_10B_RD_NORSTRT_VALUE_ABRT_10B_RD_VOID      _u(0x0)
+//               0x0 -> Master not trying to read in 10Bit addressing mode when RESTART disabled
+//               0x1 -> Master trying to read in 10Bit addressing mode when RESTART disabled
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_10B_RD_NORSTRT_RESET  _u(0x0)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_10B_RD_NORSTRT_BITS   _u(0x00000400)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_10B_RD_NORSTRT_MSB    _u(10)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_10B_RD_NORSTRT_LSB    _u(10)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_10B_RD_NORSTRT_ACCESS "RO"
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_10B_RD_NORSTRT_VALUE_ABRT_10B_RD_VOID _u(0x0)
 #define I2C_IC_TX_ABRT_SOURCE_ABRT_10B_RD_NORSTRT_VALUE_ABRT_10B_RD_GENERATED _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_TX_ABRT_SOURCE_ABRT_SBYTE_NORSTRT
@@ -2088,15 +2080,14 @@
 //               Reset value: 0x0
 //
 //               Role of DW_apb_i2c:  Master
-//               0x0 -> User trying to send START byte when RESTART disabled-
-//               scenario not present
+//               0x0 -> User trying to send START byte when RESTART disabled- scenario not present
 //               0x1 -> User trying to send START byte when RESTART disabled
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_SBYTE_NORSTRT_RESET                              _u(0x0)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_SBYTE_NORSTRT_BITS                               _u(0x00000200)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_SBYTE_NORSTRT_MSB                                _u(9)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_SBYTE_NORSTRT_LSB                                _u(9)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_SBYTE_NORSTRT_ACCESS                             "RO"
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_SBYTE_NORSTRT_VALUE_ABRT_SBYTE_NORSTRT_VOID      _u(0x0)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_SBYTE_NORSTRT_RESET  _u(0x0)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_SBYTE_NORSTRT_BITS   _u(0x00000200)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_SBYTE_NORSTRT_MSB    _u(9)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_SBYTE_NORSTRT_LSB    _u(9)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_SBYTE_NORSTRT_ACCESS "RO"
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_SBYTE_NORSTRT_VALUE_ABRT_SBYTE_NORSTRT_VOID _u(0x0)
 #define I2C_IC_TX_ABRT_SOURCE_ABRT_SBYTE_NORSTRT_VALUE_ABRT_SBYTE_NORSTRT_GENERATED _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_TX_ABRT_SOURCE_ABRT_HS_NORSTRT
@@ -2107,16 +2098,14 @@
 //               Reset value: 0x0
 //
 //               Role of DW_apb_i2c:  Master-Transmitter or Master-Receiver
-//               0x0 -> User trying to switch Master to HS mode when RESTART
-//               disabled- scenario not present
-//               0x1 -> User trying to switch Master to HS mode when RESTART
-//               disabled
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_HS_NORSTRT_RESET                           _u(0x0)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_HS_NORSTRT_BITS                            _u(0x00000100)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_HS_NORSTRT_MSB                             _u(8)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_HS_NORSTRT_LSB                             _u(8)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_HS_NORSTRT_ACCESS                          "RO"
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_HS_NORSTRT_VALUE_ABRT_HS_NORSTRT_VOID      _u(0x0)
+//               0x0 -> User trying to switch Master to HS mode when RESTART disabled- scenario not present
+//               0x1 -> User trying to switch Master to HS mode when RESTART disabled
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_HS_NORSTRT_RESET  _u(0x0)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_HS_NORSTRT_BITS   _u(0x00000100)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_HS_NORSTRT_MSB    _u(8)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_HS_NORSTRT_LSB    _u(8)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_HS_NORSTRT_ACCESS "RO"
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_HS_NORSTRT_VALUE_ABRT_HS_NORSTRT_VOID _u(0x0)
 #define I2C_IC_TX_ABRT_SOURCE_ABRT_HS_NORSTRT_VALUE_ABRT_HS_NORSTRT_GENERATED _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_TX_ABRT_SOURCE_ABRT_SBYTE_ACKDET
@@ -2128,12 +2117,12 @@
 //               Role of DW_apb_i2c:  Master
 //               0x0 -> ACK detected for START byte- scenario not present
 //               0x1 -> ACK detected for START byte
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_SBYTE_ACKDET_RESET                             _u(0x0)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_SBYTE_ACKDET_BITS                              _u(0x00000080)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_SBYTE_ACKDET_MSB                               _u(7)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_SBYTE_ACKDET_LSB                               _u(7)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_SBYTE_ACKDET_ACCESS                            "RO"
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_SBYTE_ACKDET_VALUE_ABRT_SBYTE_ACKDET_VOID      _u(0x0)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_SBYTE_ACKDET_RESET  _u(0x0)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_SBYTE_ACKDET_BITS   _u(0x00000080)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_SBYTE_ACKDET_MSB    _u(7)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_SBYTE_ACKDET_LSB    _u(7)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_SBYTE_ACKDET_ACCESS "RO"
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_SBYTE_ACKDET_VALUE_ABRT_SBYTE_ACKDET_VOID _u(0x0)
 #define I2C_IC_TX_ABRT_SOURCE_ABRT_SBYTE_ACKDET_VALUE_ABRT_SBYTE_ACKDET_GENERATED _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_TX_ABRT_SOURCE_ABRT_HS_ACKDET
@@ -2145,12 +2134,12 @@
 //               Role of DW_apb_i2c:  Master
 //               0x0 -> HS Master code ACKed in HS Mode- scenario not present
 //               0x1 -> HS Master code ACKed in HS Mode
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_HS_ACKDET_RESET                       _u(0x0)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_HS_ACKDET_BITS                        _u(0x00000040)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_HS_ACKDET_MSB                         _u(6)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_HS_ACKDET_LSB                         _u(6)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_HS_ACKDET_ACCESS                      "RO"
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_HS_ACKDET_VALUE_ABRT_HS_ACK_VOID      _u(0x0)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_HS_ACKDET_RESET  _u(0x0)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_HS_ACKDET_BITS   _u(0x00000040)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_HS_ACKDET_MSB    _u(6)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_HS_ACKDET_LSB    _u(6)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_HS_ACKDET_ACCESS "RO"
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_HS_ACKDET_VALUE_ABRT_HS_ACK_VOID _u(0x0)
 #define I2C_IC_TX_ABRT_SOURCE_ABRT_HS_ACKDET_VALUE_ABRT_HS_ACK_GENERATED _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_TX_ABRT_SOURCE_ABRT_GCALL_READ
@@ -2164,12 +2153,12 @@
 //               Role of DW_apb_i2c:  Master-Transmitter
 //               0x0 -> GCALL is followed by read from bus-scenario not present
 //               0x1 -> GCALL is followed by read from bus
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_GCALL_READ_RESET                           _u(0x0)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_GCALL_READ_BITS                            _u(0x00000020)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_GCALL_READ_MSB                             _u(5)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_GCALL_READ_LSB                             _u(5)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_GCALL_READ_ACCESS                          "RO"
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_GCALL_READ_VALUE_ABRT_GCALL_READ_VOID      _u(0x0)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_GCALL_READ_RESET  _u(0x0)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_GCALL_READ_BITS   _u(0x00000020)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_GCALL_READ_MSB    _u(5)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_GCALL_READ_LSB    _u(5)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_GCALL_READ_ACCESS "RO"
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_GCALL_READ_VALUE_ABRT_GCALL_READ_VOID _u(0x0)
 #define I2C_IC_TX_ABRT_SOURCE_ABRT_GCALL_READ_VALUE_ABRT_GCALL_READ_GENERATED _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_TX_ABRT_SOURCE_ABRT_GCALL_NOACK
@@ -2182,12 +2171,12 @@
 //               Role of DW_apb_i2c:  Master-Transmitter
 //               0x0 -> GCALL not ACKed by any slave-scenario not present
 //               0x1 -> GCALL not ACKed by any slave
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_GCALL_NOACK_RESET                            _u(0x0)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_GCALL_NOACK_BITS                             _u(0x00000010)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_GCALL_NOACK_MSB                              _u(4)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_GCALL_NOACK_LSB                              _u(4)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_GCALL_NOACK_ACCESS                           "RO"
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_GCALL_NOACK_VALUE_ABRT_GCALL_NOACK_VOID      _u(0x0)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_GCALL_NOACK_RESET  _u(0x0)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_GCALL_NOACK_BITS   _u(0x00000010)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_GCALL_NOACK_MSB    _u(4)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_GCALL_NOACK_LSB    _u(4)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_GCALL_NOACK_ACCESS "RO"
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_GCALL_NOACK_VALUE_ABRT_GCALL_NOACK_VOID _u(0x0)
 #define I2C_IC_TX_ABRT_SOURCE_ABRT_GCALL_NOACK_VALUE_ABRT_GCALL_NOACK_GENERATED _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_TX_ABRT_SOURCE_ABRT_TXDATA_NOACK
@@ -2199,15 +2188,14 @@
 //               Reset value: 0x0
 //
 //               Role of DW_apb_i2c:  Master-Transmitter
-//               0x0 -> Transmitted data non-ACKed by addressed slave-scenario
-//               not present
+//               0x0 -> Transmitted data non-ACKed by addressed slave-scenario not present
 //               0x1 -> Transmitted data not ACKed by addressed slave
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_TXDATA_NOACK_RESET                             _u(0x0)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_TXDATA_NOACK_BITS                              _u(0x00000008)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_TXDATA_NOACK_MSB                               _u(3)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_TXDATA_NOACK_LSB                               _u(3)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_TXDATA_NOACK_ACCESS                            "RO"
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_TXDATA_NOACK_VALUE_ABRT_TXDATA_NOACK_VOID      _u(0x0)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_TXDATA_NOACK_RESET  _u(0x0)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_TXDATA_NOACK_BITS   _u(0x00000008)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_TXDATA_NOACK_MSB    _u(3)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_TXDATA_NOACK_LSB    _u(3)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_TXDATA_NOACK_ACCESS "RO"
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_TXDATA_NOACK_VALUE_ABRT_TXDATA_NOACK_VOID _u(0x0)
 #define I2C_IC_TX_ABRT_SOURCE_ABRT_TXDATA_NOACK_VALUE_ABRT_TXDATA_NOACK_GENERATED _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_TX_ABRT_SOURCE_ABRT_10ADDR2_NOACK
@@ -2220,13 +2208,13 @@
 //               Role of DW_apb_i2c:  Master-Transmitter or Master-Receiver
 //               0x0 -> This abort is not generated
 //               0x1 -> Byte 2 of 10Bit Address not ACKed by any slave
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_10ADDR2_NOACK_RESET          _u(0x0)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_10ADDR2_NOACK_BITS           _u(0x00000004)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_10ADDR2_NOACK_MSB            _u(2)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_10ADDR2_NOACK_LSB            _u(2)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_10ADDR2_NOACK_ACCESS         "RO"
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_10ADDR2_NOACK_RESET  _u(0x0)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_10ADDR2_NOACK_BITS   _u(0x00000004)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_10ADDR2_NOACK_MSB    _u(2)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_10ADDR2_NOACK_LSB    _u(2)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_10ADDR2_NOACK_ACCESS "RO"
 #define I2C_IC_TX_ABRT_SOURCE_ABRT_10ADDR2_NOACK_VALUE_INACTIVE _u(0x0)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_10ADDR2_NOACK_VALUE_ACTIVE   _u(0x1)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_10ADDR2_NOACK_VALUE_ACTIVE _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_TX_ABRT_SOURCE_ABRT_10ADDR1_NOACK
 // Description : This field indicates that the Master is in 10-bit address mode
@@ -2238,13 +2226,13 @@
 //               Role of DW_apb_i2c:  Master-Transmitter or Master-Receiver
 //               0x0 -> This abort is not generated
 //               0x1 -> Byte 1 of 10Bit Address not ACKed by any slave
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_10ADDR1_NOACK_RESET          _u(0x0)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_10ADDR1_NOACK_BITS           _u(0x00000002)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_10ADDR1_NOACK_MSB            _u(1)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_10ADDR1_NOACK_LSB            _u(1)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_10ADDR1_NOACK_ACCESS         "RO"
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_10ADDR1_NOACK_RESET  _u(0x0)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_10ADDR1_NOACK_BITS   _u(0x00000002)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_10ADDR1_NOACK_MSB    _u(1)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_10ADDR1_NOACK_LSB    _u(1)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_10ADDR1_NOACK_ACCESS "RO"
 #define I2C_IC_TX_ABRT_SOURCE_ABRT_10ADDR1_NOACK_VALUE_INACTIVE _u(0x0)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_10ADDR1_NOACK_VALUE_ACTIVE   _u(0x1)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_10ADDR1_NOACK_VALUE_ACTIVE _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_TX_ABRT_SOURCE_ABRT_7B_ADDR_NOACK
 // Description : This field indicates that the Master is in 7-bit addressing
@@ -2254,15 +2242,14 @@
 //
 //               Role of DW_apb_i2c:  Master-Transmitter or Master-Receiver
 //               0x0 -> This abort is not generated
-//               0x1 -> This abort is generated because of NOACK for 7-bit
-//               address
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_7B_ADDR_NOACK_RESET          _u(0x0)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_7B_ADDR_NOACK_BITS           _u(0x00000001)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_7B_ADDR_NOACK_MSB            _u(0)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_7B_ADDR_NOACK_LSB            _u(0)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_7B_ADDR_NOACK_ACCESS         "RO"
+//               0x1 -> This abort is generated because of NOACK for 7-bit address
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_7B_ADDR_NOACK_RESET  _u(0x0)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_7B_ADDR_NOACK_BITS   _u(0x00000001)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_7B_ADDR_NOACK_MSB    _u(0)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_7B_ADDR_NOACK_LSB    _u(0)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_7B_ADDR_NOACK_ACCESS "RO"
 #define I2C_IC_TX_ABRT_SOURCE_ABRT_7B_ADDR_NOACK_VALUE_INACTIVE _u(0x0)
-#define I2C_IC_TX_ABRT_SOURCE_ABRT_7B_ADDR_NOACK_VALUE_ACTIVE   _u(0x1)
+#define I2C_IC_TX_ABRT_SOURCE_ABRT_7B_ADDR_NOACK_VALUE_ACTIVE _u(0x1)
 // =============================================================================
 // Register    : I2C_IC_SLV_DATA_NACK_ONLY
 // Description : Generate Slave Data NACK Register
@@ -2296,13 +2283,13 @@
 //               value: 0x0
 //               0x0 -> Slave receiver generates NACK normally
 //               0x1 -> Slave receiver generates NACK upon data reception only
-#define I2C_IC_SLV_DATA_NACK_ONLY_NACK_RESET          _u(0x0)
-#define I2C_IC_SLV_DATA_NACK_ONLY_NACK_BITS           _u(0x00000001)
-#define I2C_IC_SLV_DATA_NACK_ONLY_NACK_MSB            _u(0)
-#define I2C_IC_SLV_DATA_NACK_ONLY_NACK_LSB            _u(0)
-#define I2C_IC_SLV_DATA_NACK_ONLY_NACK_ACCESS         "RW"
+#define I2C_IC_SLV_DATA_NACK_ONLY_NACK_RESET  _u(0x0)
+#define I2C_IC_SLV_DATA_NACK_ONLY_NACK_BITS   _u(0x00000001)
+#define I2C_IC_SLV_DATA_NACK_ONLY_NACK_MSB    _u(0)
+#define I2C_IC_SLV_DATA_NACK_ONLY_NACK_LSB    _u(0)
+#define I2C_IC_SLV_DATA_NACK_ONLY_NACK_ACCESS "RW"
 #define I2C_IC_SLV_DATA_NACK_ONLY_NACK_VALUE_DISABLED _u(0x0)
-#define I2C_IC_SLV_DATA_NACK_ONLY_NACK_VALUE_ENABLED  _u(0x1)
+#define I2C_IC_SLV_DATA_NACK_ONLY_NACK_VALUE_ENABLED _u(0x1)
 // =============================================================================
 // Register    : I2C_IC_DMA_CR
 // Description : DMA Control Register
@@ -2319,26 +2306,26 @@
 //               FIFO DMA channel. Reset value: 0x0
 //               0x0 -> transmit FIFO DMA channel disabled
 //               0x1 -> Transmit FIFO DMA channel enabled
-#define I2C_IC_DMA_CR_TDMAE_RESET          _u(0x0)
-#define I2C_IC_DMA_CR_TDMAE_BITS           _u(0x00000002)
-#define I2C_IC_DMA_CR_TDMAE_MSB            _u(1)
-#define I2C_IC_DMA_CR_TDMAE_LSB            _u(1)
-#define I2C_IC_DMA_CR_TDMAE_ACCESS         "RW"
+#define I2C_IC_DMA_CR_TDMAE_RESET  _u(0x0)
+#define I2C_IC_DMA_CR_TDMAE_BITS   _u(0x00000002)
+#define I2C_IC_DMA_CR_TDMAE_MSB    _u(1)
+#define I2C_IC_DMA_CR_TDMAE_LSB    _u(1)
+#define I2C_IC_DMA_CR_TDMAE_ACCESS "RW"
 #define I2C_IC_DMA_CR_TDMAE_VALUE_DISABLED _u(0x0)
-#define I2C_IC_DMA_CR_TDMAE_VALUE_ENABLED  _u(0x1)
+#define I2C_IC_DMA_CR_TDMAE_VALUE_ENABLED _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_DMA_CR_RDMAE
 // Description : Receive DMA Enable. This bit enables/disables the receive FIFO
 //               DMA channel. Reset value: 0x0
 //               0x0 -> Receive FIFO DMA channel disabled
 //               0x1 -> Receive FIFO DMA channel enabled
-#define I2C_IC_DMA_CR_RDMAE_RESET          _u(0x0)
-#define I2C_IC_DMA_CR_RDMAE_BITS           _u(0x00000001)
-#define I2C_IC_DMA_CR_RDMAE_MSB            _u(0)
-#define I2C_IC_DMA_CR_RDMAE_LSB            _u(0)
-#define I2C_IC_DMA_CR_RDMAE_ACCESS         "RW"
+#define I2C_IC_DMA_CR_RDMAE_RESET  _u(0x0)
+#define I2C_IC_DMA_CR_RDMAE_BITS   _u(0x00000001)
+#define I2C_IC_DMA_CR_RDMAE_MSB    _u(0)
+#define I2C_IC_DMA_CR_RDMAE_LSB    _u(0)
+#define I2C_IC_DMA_CR_RDMAE_ACCESS "RW"
 #define I2C_IC_DMA_CR_RDMAE_VALUE_DISABLED _u(0x0)
-#define I2C_IC_DMA_CR_RDMAE_VALUE_ENABLED  _u(0x1)
+#define I2C_IC_DMA_CR_RDMAE_VALUE_ENABLED _u(0x1)
 // =============================================================================
 // Register    : I2C_IC_DMA_TDLR
 // Description : DMA Transmit Data Level Register
@@ -2434,13 +2421,13 @@
 //               ic_data_oe).
 //               0x0 -> Generate NACK for a General Call
 //               0x1 -> Generate ACK for a General Call
-#define I2C_IC_ACK_GENERAL_CALL_ACK_GEN_CALL_RESET          _u(0x1)
-#define I2C_IC_ACK_GENERAL_CALL_ACK_GEN_CALL_BITS           _u(0x00000001)
-#define I2C_IC_ACK_GENERAL_CALL_ACK_GEN_CALL_MSB            _u(0)
-#define I2C_IC_ACK_GENERAL_CALL_ACK_GEN_CALL_LSB            _u(0)
-#define I2C_IC_ACK_GENERAL_CALL_ACK_GEN_CALL_ACCESS         "RW"
+#define I2C_IC_ACK_GENERAL_CALL_ACK_GEN_CALL_RESET  _u(0x1)
+#define I2C_IC_ACK_GENERAL_CALL_ACK_GEN_CALL_BITS   _u(0x00000001)
+#define I2C_IC_ACK_GENERAL_CALL_ACK_GEN_CALL_MSB    _u(0)
+#define I2C_IC_ACK_GENERAL_CALL_ACK_GEN_CALL_LSB    _u(0)
+#define I2C_IC_ACK_GENERAL_CALL_ACK_GEN_CALL_ACCESS "RW"
 #define I2C_IC_ACK_GENERAL_CALL_ACK_GEN_CALL_VALUE_DISABLED _u(0x0)
-#define I2C_IC_ACK_GENERAL_CALL_ACK_GEN_CALL_VALUE_ENABLED  _u(0x1)
+#define I2C_IC_ACK_GENERAL_CALL_ACK_GEN_CALL_VALUE_ENABLED _u(0x1)
 // =============================================================================
 // Register    : I2C_IC_ENABLE_STATUS
 // Description : I2C Enable Status Register
@@ -2463,14 +2450,14 @@
 #define I2C_IC_ENABLE_STATUS_RESET  _u(0x00000000)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_ENABLE_STATUS_SLV_RX_DATA_LOST
-// Description : Slave Received Data Lost. This bit indicates if a
-//               Slave-Receiver operation has been aborted with at least one
-//               data byte received from an I2C transfer due to the setting bit
-//               0 of IC_ENABLE from 1 to 0. When read as 1, DW_apb_i2c is
-//               deemed to have been actively engaged in an aborted I2C transfer
-//               (with matching address) and the data phase of the I2C transfer
-//               has been entered, even though a data byte has been responded
-//               with a NACK.
+// Description : Slave Received Data Lost. This bit indicates if a Slave-
+//               Receiver operation has been aborted with at least one data byte
+//               received from an I2C transfer due to the setting bit 0 of
+//               IC_ENABLE from 1 to 0. When read as 1, DW_apb_i2c is deemed to
+//               have been actively engaged in an aborted I2C transfer (with
+//               matching address) and the data phase of the I2C transfer has
+//               been entered, even though a data byte has been responded with a
+//               NACK.
 //
 //               Note:  If the remote I2C master terminates the transfer with a
 //               STOP condition before the DW_apb_i2c has a chance to NACK a
@@ -2478,8 +2465,8 @@
 //               also set to 1.
 //
 //               When read as 0, DW_apb_i2c is deemed to have been disabled
-//               without being actively involved in the data phase of a
-//               Slave-Receiver transfer.
+//               without being actively involved in the data phase of a Slave-
+//               Receiver transfer.
 //
 //               Note:  The CPU can safely read this bit when IC_EN (bit 0) is
 //               read as 0.
@@ -2487,13 +2474,13 @@
 //               Reset value: 0x0
 //               0x0 -> Slave RX Data is not lost
 //               0x1 -> Slave RX Data is lost
-#define I2C_IC_ENABLE_STATUS_SLV_RX_DATA_LOST_RESET          _u(0x0)
-#define I2C_IC_ENABLE_STATUS_SLV_RX_DATA_LOST_BITS           _u(0x00000004)
-#define I2C_IC_ENABLE_STATUS_SLV_RX_DATA_LOST_MSB            _u(2)
-#define I2C_IC_ENABLE_STATUS_SLV_RX_DATA_LOST_LSB            _u(2)
-#define I2C_IC_ENABLE_STATUS_SLV_RX_DATA_LOST_ACCESS         "RO"
+#define I2C_IC_ENABLE_STATUS_SLV_RX_DATA_LOST_RESET  _u(0x0)
+#define I2C_IC_ENABLE_STATUS_SLV_RX_DATA_LOST_BITS   _u(0x00000004)
+#define I2C_IC_ENABLE_STATUS_SLV_RX_DATA_LOST_MSB    _u(2)
+#define I2C_IC_ENABLE_STATUS_SLV_RX_DATA_LOST_LSB    _u(2)
+#define I2C_IC_ENABLE_STATUS_SLV_RX_DATA_LOST_ACCESS "RO"
 #define I2C_IC_ENABLE_STATUS_SLV_RX_DATA_LOST_VALUE_INACTIVE _u(0x0)
-#define I2C_IC_ENABLE_STATUS_SLV_RX_DATA_LOST_VALUE_ACTIVE   _u(0x1)
+#define I2C_IC_ENABLE_STATUS_SLV_RX_DATA_LOST_VALUE_ACTIVE _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_ENABLE_STATUS_SLV_DISABLED_WHILE_BUSY
 // Description : Slave Disabled While Busy (Transmit, Receive). This bit
@@ -2502,8 +2489,8 @@
 //               1 to 0. This bit is set when the CPU writes a 0 to the
 //               IC_ENABLE register while:
 //
-//               (a) DW_apb_i2c is receiving the address byte of the
-//               Slave-Transmitter operation from a remote master;
+//               (a) DW_apb_i2c is receiving the address byte of the Slave-
+//               Transmitter operation from a remote master;
 //
 //               OR,
 //
@@ -2530,13 +2517,13 @@
 //               Reset value: 0x0
 //               0x0 -> Slave is disabled when it is idle
 //               0x1 -> Slave is disabled when it is active
-#define I2C_IC_ENABLE_STATUS_SLV_DISABLED_WHILE_BUSY_RESET          _u(0x0)
-#define I2C_IC_ENABLE_STATUS_SLV_DISABLED_WHILE_BUSY_BITS           _u(0x00000002)
-#define I2C_IC_ENABLE_STATUS_SLV_DISABLED_WHILE_BUSY_MSB            _u(1)
-#define I2C_IC_ENABLE_STATUS_SLV_DISABLED_WHILE_BUSY_LSB            _u(1)
-#define I2C_IC_ENABLE_STATUS_SLV_DISABLED_WHILE_BUSY_ACCESS         "RO"
+#define I2C_IC_ENABLE_STATUS_SLV_DISABLED_WHILE_BUSY_RESET  _u(0x0)
+#define I2C_IC_ENABLE_STATUS_SLV_DISABLED_WHILE_BUSY_BITS   _u(0x00000002)
+#define I2C_IC_ENABLE_STATUS_SLV_DISABLED_WHILE_BUSY_MSB    _u(1)
+#define I2C_IC_ENABLE_STATUS_SLV_DISABLED_WHILE_BUSY_LSB    _u(1)
+#define I2C_IC_ENABLE_STATUS_SLV_DISABLED_WHILE_BUSY_ACCESS "RO"
 #define I2C_IC_ENABLE_STATUS_SLV_DISABLED_WHILE_BUSY_VALUE_INACTIVE _u(0x0)
-#define I2C_IC_ENABLE_STATUS_SLV_DISABLED_WHILE_BUSY_VALUE_ACTIVE   _u(0x1)
+#define I2C_IC_ENABLE_STATUS_SLV_DISABLED_WHILE_BUSY_VALUE_ACTIVE _u(0x1)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_ENABLE_STATUS_IC_EN
 // Description : ic_en Status. This bit always reflects the value driven on the
@@ -2549,13 +2536,13 @@
 //               Reset value: 0x0
 //               0x0 -> I2C disabled
 //               0x1 -> I2C enabled
-#define I2C_IC_ENABLE_STATUS_IC_EN_RESET          _u(0x0)
-#define I2C_IC_ENABLE_STATUS_IC_EN_BITS           _u(0x00000001)
-#define I2C_IC_ENABLE_STATUS_IC_EN_MSB            _u(0)
-#define I2C_IC_ENABLE_STATUS_IC_EN_LSB            _u(0)
-#define I2C_IC_ENABLE_STATUS_IC_EN_ACCESS         "RO"
+#define I2C_IC_ENABLE_STATUS_IC_EN_RESET  _u(0x0)
+#define I2C_IC_ENABLE_STATUS_IC_EN_BITS   _u(0x00000001)
+#define I2C_IC_ENABLE_STATUS_IC_EN_MSB    _u(0)
+#define I2C_IC_ENABLE_STATUS_IC_EN_LSB    _u(0)
+#define I2C_IC_ENABLE_STATUS_IC_EN_ACCESS "RO"
 #define I2C_IC_ENABLE_STATUS_IC_EN_VALUE_DISABLED _u(0x0)
-#define I2C_IC_ENABLE_STATUS_IC_EN_VALUE_ENABLED  _u(0x1)
+#define I2C_IC_ENABLE_STATUS_IC_EN_VALUE_ENABLED _u(0x1)
 // =============================================================================
 // Register    : I2C_IC_FS_SPKLEN
 // Description : I2C SS, FS or FM+ spike suppression limit
@@ -2687,7 +2674,6 @@
 #define I2C_IC_COMP_VERSION_RESET  _u(0x3230312a)
 // -----------------------------------------------------------------------------
 // Field       : I2C_IC_COMP_VERSION_IC_COMP_VERSION
-// Description : None
 #define I2C_IC_COMP_VERSION_IC_COMP_VERSION_RESET  _u(0x3230312a)
 #define I2C_IC_COMP_VERSION_IC_COMP_VERSION_BITS   _u(0xffffffff)
 #define I2C_IC_COMP_VERSION_IC_COMP_VERSION_MSB    _u(31)
@@ -2710,4 +2696,5 @@
 #define I2C_IC_COMP_TYPE_IC_COMP_TYPE_LSB    _u(0)
 #define I2C_IC_COMP_TYPE_IC_COMP_TYPE_ACCESS "RO"
 // =============================================================================
-#endif // HARDWARE_REGS_I2C_DEFINED
+#endif // _HARDWARE_REGS_I2C_H
+
