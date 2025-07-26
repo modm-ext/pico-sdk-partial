@@ -4,6 +4,7 @@ on:
   schedule:
     - cron:  '08 8 * * 3'
   workflow_dispatch:
+  pull_request:
 
 jobs:
   update:
@@ -25,5 +26,6 @@ jobs:
           wget -qL https://raw.githubusercontent.com/modm-ext/partial/main/partial.py
           python3 update.py
       - name: Git push
+        if: github.ref == 'refs/heads/main'
         run: |
           git push origin main
