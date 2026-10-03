@@ -68,4 +68,3 @@ typedef struct {
 static_assert(sizeof (glitch_detector_hw_t) == 0x0018, "");
 
 #endif // _HARDWARE_STRUCTS_GLITCH_DETECTOR_H
-

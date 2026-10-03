@@ -40,4 +40,3 @@ typedef struct {
 static_assert(sizeof (coresight_trace_hw_t) == 0x0008, "");
 
 #endif // _HARDWARE_STRUCTS_CORESIGHT_TRACE_H
-

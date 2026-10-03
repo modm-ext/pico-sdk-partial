@@ -59,4 +59,3 @@ typedef struct {
 static_assert(sizeof (systick_hw_t) == 0x0010, "");
 
 #endif // _HARDWARE_STRUCTS_SYSTICK_H
-

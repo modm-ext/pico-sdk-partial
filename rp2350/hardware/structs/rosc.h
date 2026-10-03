@@ -96,4 +96,3 @@ typedef struct {
 static_assert(sizeof (rosc_hw_t) == 0x0028, "");
 
 #endif // _HARDWARE_STRUCTS_ROSC_H
-

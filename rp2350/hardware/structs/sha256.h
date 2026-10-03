@@ -50,4 +50,3 @@ typedef struct {
 static_assert(sizeof (sha256_hw_t) == 0x0028, "");
 
 #endif // _HARDWARE_STRUCTS_SHA256_H
-

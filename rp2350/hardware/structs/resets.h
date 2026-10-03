@@ -163,4 +163,3 @@ typedef struct {
 static_assert(sizeof (resets_hw_t) == 0x000c, "");
 
 #endif // _HARDWARE_STRUCTS_RESETS_H
-

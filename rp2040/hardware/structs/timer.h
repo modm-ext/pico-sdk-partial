@@ -1,7 +1,7 @@
 // THIS HEADER FILE IS AUTOMATICALLY GENERATED -- DO NOT EDIT
 
 /**
- * Copyright (c) 2024 Raspberry Pi Ltd.
+ * Copyright (c) 2021 Raspberry Pi Ltd.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -25,17 +25,17 @@
 
 typedef struct {
     _REG_(TIMER_TIMEHW_OFFSET) // TIMER_TIMEHW
-    // Write to bits 63:32 of time +
+    // Write to bits 63:32 of time
     // 0xffffffff [31:0]  TIMEHW       (0x00000000)
     io_wo_32 timehw;
 
     _REG_(TIMER_TIMELW_OFFSET) // TIMER_TIMELW
-    // Write to bits 31:0 of time +
+    // Write to bits 31:0 of time
     // 0xffffffff [31:0]  TIMELW       (0x00000000)
     io_wo_32 timelw;
 
     _REG_(TIMER_TIMEHR_OFFSET) // TIMER_TIMEHR
-    // Read from bits 63:32 of time +
+    // Read from bits 63:32 of time
     // 0xffffffff [31:0]  TIMEHR       (0x00000000)
     io_ro_32 timehr;
 
@@ -113,4 +113,3 @@ typedef struct {
 static_assert(sizeof (timer_hw_t) == 0x0044, "");
 
 #endif // _HARDWARE_STRUCTS_TIMER_H
-

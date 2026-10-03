@@ -25,7 +25,7 @@
 
 typedef struct {
     _REG_(PIO_SM0_CLKDIV_OFFSET) // PIO_SM0_CLKDIV
-    // Clock divisor register for state machine 0 +
+    // Clock divisor register for state machine 0
     // 0xffff0000 [31:16] INT          (0x0001) Effective frequency is sysclk/(int + frac/256)
     // 0x0000ff00 [15:8]  FRAC         (0x00) Fractional part of clock divisor
     io_rw_32 clkdiv;
@@ -66,7 +66,7 @@ typedef struct {
     io_ro_32 addr;
 
     _REG_(PIO_SM0_INSTR_OFFSET) // PIO_SM0_INSTR
-    // Read to see the instruction currently addressed by state machine 0's program counter +
+    // Read to see the instruction currently addressed by state machine 0's program counter
     // 0x0000ffff [15:0]  SM0_INSTR    (-)
     io_rw_32 instr;
 
@@ -377,4 +377,3 @@ typedef struct {
 static_assert(sizeof (pio_hw_t) == 0x0188, "");
 
 #endif // _HARDWARE_STRUCTS_PIO_H
-

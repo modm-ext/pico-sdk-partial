@@ -189,4 +189,3 @@ typedef struct {
 static_assert(sizeof (otp_hw_t) == 0x0174, "");
 
 #endif // _HARDWARE_STRUCTS_OTP_H
-

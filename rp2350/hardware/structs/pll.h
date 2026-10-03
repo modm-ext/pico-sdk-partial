@@ -79,4 +79,3 @@ typedef struct {
 static_assert(sizeof (pll_hw_t) == 0x0020, "");
 
 #endif // _HARDWARE_STRUCTS_PLL_H
-

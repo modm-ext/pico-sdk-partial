@@ -1,7 +1,7 @@
 // THIS HEADER FILE IS AUTOMATICALLY GENERATED -- DO NOT EDIT
 
 /**
- * Copyright (c) 2024 Raspberry Pi Ltd.
+ * Copyright (c) 2021 Raspberry Pi Ltd.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -212,4 +212,3 @@ typedef struct {
 static_assert(sizeof (ssi_hw_t) == 0x00fc, "");
 
 #endif // _HARDWARE_STRUCTS_SSI_H
-

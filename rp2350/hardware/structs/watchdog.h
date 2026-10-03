@@ -25,7 +25,7 @@
 
 typedef struct {
     _REG_(WATCHDOG_CTRL_OFFSET) // WATCHDOG_CTRL
-    // Watchdog control +
+    // Watchdog control
     // 0x80000000 [31]    TRIGGER      (0) Trigger a watchdog reset
     // 0x40000000 [30]    ENABLE       (0) When not enabled the watchdog timer is paused
     // 0x04000000 [26]    PAUSE_DBG1   (1) Pause the watchdog timer when processor 1 is in debug mode
@@ -56,4 +56,3 @@ typedef struct {
 static_assert(sizeof (watchdog_hw_t) == 0x002c, "");
 
 #endif // _HARDWARE_STRUCTS_WATCHDOG_H
-

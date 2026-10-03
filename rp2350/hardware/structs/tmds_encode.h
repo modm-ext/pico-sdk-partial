@@ -89,4 +89,3 @@ typedef struct {
 static_assert(sizeof (tmds_encode_hw_t) == 0x0028, "");
 
 #endif // _HARDWARE_STRUCTS_TMDS_ENCODE_H
-

@@ -1,7 +1,7 @@
 // THIS HEADER FILE IS AUTOMATICALLY GENERATED -- DO NOT EDIT
 
 /**
- * Copyright (c) 2024 Raspberry Pi Ltd.
+ * Copyright (c) 2021 Raspberry Pi Ltd.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -22,7 +22,6 @@
 //
 // Bit-field descriptions are of the form:
 // BITMASK [BITRANGE] FIELDNAME (RESETVALUE) DESCRIPTION
-
 /** \brief Clock numbers on RP2040 (used as typedef \ref clock_num_t)
  *  \ingroup hardware_clocks
  */
@@ -151,7 +150,7 @@ typedef struct {
     io_rw_32 max_khz;
 
     _REG_(CLOCKS_FC0_DELAY_OFFSET) // CLOCKS_FC0_DELAY
-    // Delays the start of frequency counting to allow the mux to settle +
+    // Delays the start of frequency counting to allow the mux to settle
     // 0x00000007 [2:0]   FC0_DELAY    (0x1)
     io_rw_32 delay;
 
@@ -161,7 +160,7 @@ typedef struct {
     io_rw_32 interval;
 
     _REG_(CLOCKS_FC0_SRC_OFFSET) // CLOCKS_FC0_SRC
-    // Clock sent to frequency counter, set to 0 when not required +
+    // Clock sent to frequency counter, set to 0 when not required
     // 0x000000ff [7:0]   FC0_SRC      (0x00)
     io_rw_32 src;
 
@@ -203,7 +202,7 @@ typedef struct {
             // 0x04000000 [26]    CLK_PERI_SPI1 (1)
             // 0x02000000 [25]    CLK_SYS_SPI0 (1)
             // 0x01000000 [24]    CLK_PERI_SPI0 (1)
-            // 0x00800000 [23]    CLK_SYS_SIOB (1)
+            // 0x00800000 [23]    CLK_SYS_SIO (1)
             // 0x00400000 [22]    CLK_SYS_RTC  (1)
             // 0x00200000 [21]    CLK_RTC_RTC  (1)
             // 0x00100000 [20]    CLK_SYS_ROSC (1)
@@ -298,7 +297,7 @@ typedef struct {
             // 0x04000000 [26]    CLK_PERI_SPI1 (1)
             // 0x02000000 [25]    CLK_SYS_SPI0 (1)
             // 0x01000000 [24]    CLK_PERI_SPI0 (1)
-            // 0x00800000 [23]    CLK_SYS_SIOB (1)
+            // 0x00800000 [23]    CLK_SYS_SIO (1)
             // 0x00400000 [22]    CLK_SYS_RTC  (1)
             // 0x00200000 [21]    CLK_RTC_RTC  (1)
             // 0x00100000 [20]    CLK_SYS_ROSC (1)
@@ -393,7 +392,7 @@ typedef struct {
             // 0x04000000 [26]    CLK_PERI_SPI1 (0)
             // 0x02000000 [25]    CLK_SYS_SPI0 (0)
             // 0x01000000 [24]    CLK_PERI_SPI0 (0)
-            // 0x00800000 [23]    CLK_SYS_SIOB (0)
+            // 0x00800000 [23]    CLK_SYS_SIO (0)
             // 0x00400000 [22]    CLK_SYS_RTC  (0)
             // 0x00200000 [21]    CLK_RTC_RTC  (0)
             // 0x00100000 [20]    CLK_SYS_ROSC (0)
@@ -501,4 +500,3 @@ typedef struct {
 static_assert(sizeof (clocks_hw_t) == 0x00c8, "");
 
 #endif // _HARDWARE_STRUCTS_CLOCKS_H
-

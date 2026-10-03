@@ -1,7 +1,7 @@
 // THIS HEADER FILE IS AUTOMATICALLY GENERATED -- DO NOT EDIT
 
 /**
- * Copyright (c) 2024 Raspberry Pi Ltd.
+ * Copyright (c) 2021 Raspberry Pi Ltd.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -76,7 +76,7 @@ typedef struct {
     io_rw_32 al1_write_addr;
 
     _REG_(DMA_CH0_AL1_TRANS_COUNT_TRIG_OFFSET) // DMA_CH0_AL1_TRANS_COUNT_TRIG
-    // Alias for channel 0 TRANS_COUNT register +
+    // Alias for channel 0 TRANS_COUNT register
     // 0xffffffff [31:0]  CH0_AL1_TRANS_COUNT_TRIG (-)
     io_rw_32 al1_transfer_count_trig;
 
@@ -96,7 +96,7 @@ typedef struct {
     io_rw_32 al2_read_addr;
 
     _REG_(DMA_CH0_AL2_WRITE_ADDR_TRIG_OFFSET) // DMA_CH0_AL2_WRITE_ADDR_TRIG
-    // Alias for channel 0 WRITE_ADDR register +
+    // Alias for channel 0 WRITE_ADDR register
     // 0xffffffff [31:0]  CH0_AL2_WRITE_ADDR_TRIG (-)
     io_rw_32 al2_write_addr_trig;
 
@@ -116,7 +116,7 @@ typedef struct {
     io_rw_32 al3_transfer_count;
 
     _REG_(DMA_CH0_AL3_READ_ADDR_TRIG_OFFSET) // DMA_CH0_AL3_READ_ADDR_TRIG
-    // Alias for channel 0 READ_ADDR register +
+    // Alias for channel 0 READ_ADDR register
     // 0xffffffff [31:0]  CH0_AL3_READ_ADDR_TRIG (-)
     io_rw_32 al3_read_addr_trig;
 } dma_channel_hw_t;
@@ -192,7 +192,7 @@ typedef struct {
 
     // (Description copied from array index 0 register DMA_TIMER0 applies similarly to other array indexes)
     _REG_(DMA_TIMER0_OFFSET) // DMA_TIMER0
-    // Pacing (X/Y) Fractional Timer +
+    // Pacing (X/Y) Fractional Timer
     // 0xffff0000 [31:16] X            (0x0000) Pacing Timer Dividend
     // 0x0000ffff [15:0]  Y            (0x0000) Pacing Timer Divisor
     io_rw_32 timer[4];
@@ -236,4 +236,3 @@ typedef struct {
 static_assert(sizeof (dma_hw_t) == 0x0448, "");
 
 #endif // _HARDWARE_STRUCTS_DMA_H
-

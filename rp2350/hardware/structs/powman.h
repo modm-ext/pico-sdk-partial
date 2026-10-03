@@ -96,7 +96,7 @@ typedef struct {
 
     _REG_(POWMAN_CHIP_RESET_OFFSET) // POWMAN_CHIP_RESET
     // Chip reset control and status
-    // 0x10000000 [28]    HAD_WATCHDOG_RESET_RSM (0) Last reset was a watchdog timeout which was configured...
+    // 0x10000000 [28]    HAD_WATCHDOG_RESET_PSM (0) Last reset was a watchdog timeout which was configured...
     // 0x08000000 [27]    HAD_HZD_SYS_RESET_REQ (0) Last reset was a system reset from the hazard debugger +
     // 0x04000000 [26]    HAD_GLITCH_DETECT (0) Last reset was due to a power supply glitch +
     // 0x02000000 [25]    HAD_SWCORE_PD (0) Last reset was a switched core powerdown +
@@ -114,14 +114,14 @@ typedef struct {
 
     _REG_(POWMAN_WDSEL_OFFSET) // POWMAN_WDSEL
     // Allows a watchdog reset to reset the internal state of powman in addition to the power-on state...
-    // 0x00001000 [12]    RESET_RSM    (0) If set to 1, a watchdog reset will run the full power-on...
+    // 0x00001000 [12]    RESET_PSM    (0) If set to 1, a watchdog reset will run the full power-on...
     // 0x00000100 [8]     RESET_SWCORE (0) If set to 1, a watchdog reset will reset the switched...
     // 0x00000010 [4]     RESET_POWMAN (0) If set to 1, a watchdog reset will restore powman...
     // 0x00000001 [0]     RESET_POWMAN_ASYNC (0) If set to 1, a watchdog reset will restore powman...
     io_rw_32 wdsel;
 
     _REG_(POWMAN_SEQ_CFG_OFFSET) // POWMAN_SEQ_CFG
-    // For configuration of the power sequencer +
+    // For configuration of the power sequencer
     // 0x00100000 [20]    USING_FAST_POWCK (1) 0 indicates the POWMAN clock is running from the low...
     // 0x00020000 [17]    USING_BOD_LP (0) Indicates the brown-out detector (BOD) mode +
     // 0x00010000 [16]    USING_VREG_LP (0) Indicates the voltage regulator (VREG) mode +
@@ -171,7 +171,7 @@ typedef struct {
     _REG_(POWMAN_EXT_TIME_REF_OFFSET) // POWMAN_EXT_TIME_REF
     // Select a GPIO to use as a time reference, the source can be used to drive the low power clock at...
     // 0x00000010 [4]     DRIVE_LPCK   (0) Use the selected GPIO to drive the 32kHz low power...
-    // 0x00000003 [1:0]   SOURCE_SEL   (0x0) 0 ->  gpio12 +
+    // 0x00000003 [1:0]   SOURCE_SEL   (0x0)
     io_rw_32 ext_time_ref;
 
     _REG_(POWMAN_LPOSC_FREQ_KHZ_INT_OFFSET) // POWMAN_LPOSC_FREQ_KHZ_INT
@@ -263,12 +263,12 @@ typedef struct {
     io_rw_32 pwrup[4];
 
     _REG_(POWMAN_CURRENT_PWRUP_REQ_OFFSET) // POWMAN_CURRENT_PWRUP_REQ
-    // Indicates current powerup request state +
+    // Indicates current powerup request state
     // 0x0000007f [6:0]   CURRENT_PWRUP_REQ (0x00)
     io_ro_32 current_pwrup_req;
 
     _REG_(POWMAN_LAST_SWCORE_PWRUP_OFFSET) // POWMAN_LAST_SWCORE_PWRUP
-    // Indicates which pwrup source triggered the last switched-core power up +
+    // Indicates which pwrup source triggered the last switched-core power up
     // 0x0000007f [6:0]   LAST_SWCORE_PWRUP (0x00)
     io_ro_32 last_swcore_pwrup;
 
@@ -279,7 +279,7 @@ typedef struct {
     _REG_(POWMAN_BOOTDIS_OFFSET) // POWMAN_BOOTDIS
     // Tell the bootrom to ignore the BOOT0
     // 0x00000002 [1]     NEXT         (0) This flag always ORs writes into its current contents
-    // 0x00000001 [0]     NOW          (0) When powman resets the RSM, the current value of...
+    // 0x00000001 [0]     NOW          (0) When powman resets the PSM, the current value of...
     io_rw_32 bootdis;
 
     _REG_(POWMAN_DBGCONFIG_OFFSET) // POWMAN_DBGCONFIG
@@ -335,4 +335,3 @@ typedef struct {
 static_assert(sizeof (powman_hw_t) == 0x00f0, "");
 
 #endif // _HARDWARE_STRUCTS_POWMAN_H
-

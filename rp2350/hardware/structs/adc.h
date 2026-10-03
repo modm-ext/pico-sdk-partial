@@ -93,4 +93,3 @@ typedef struct {
 static_assert(sizeof (adc_hw_t) == 0x0024, "");
 
 #endif // _HARDWARE_STRUCTS_ADC_H
-

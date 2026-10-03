@@ -122,4 +122,3 @@ typedef struct {
 static_assert(sizeof (qmi_hw_t) == 0x0054, "");
 
 #endif // _HARDWARE_STRUCTS_QMI_H
-

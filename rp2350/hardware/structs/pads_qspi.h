@@ -46,4 +46,3 @@ typedef struct {
 static_assert(sizeof (pads_qspi_hw_t) == 0x001c, "");
 
 #endif // _HARDWARE_STRUCTS_PADS_QSPI_H
-

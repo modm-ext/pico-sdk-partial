@@ -313,4 +313,3 @@ typedef struct {
 static_assert(sizeof (io_qspi_hw_t) == 0x0240, "");
 
 #endif // _HARDWARE_STRUCTS_IO_QSPI_H
-

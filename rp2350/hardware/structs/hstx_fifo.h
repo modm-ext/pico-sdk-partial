@@ -42,4 +42,3 @@ typedef struct {
 static_assert(sizeof (hstx_fifo_hw_t) == 0x0008, "");
 
 #endif // _HARDWARE_STRUCTS_HSTX_FIFO_H
-

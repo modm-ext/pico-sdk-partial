@@ -44,4 +44,3 @@ typedef struct {
 #define dma_debug_hw ((dma_debug_hw_t *)(DMA_BASE + DMA_CH0_DBG_CTDREQ_OFFSET))
 
 #endif // _HARDWARE_STRUCTS_DMA_DEBUG_H
-

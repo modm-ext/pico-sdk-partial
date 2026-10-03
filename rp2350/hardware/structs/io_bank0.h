@@ -449,4 +449,3 @@ typedef struct {
 static_assert(sizeof (io_bank0_hw_t) == 0x0320, "");
 
 #endif // _HARDWARE_STRUCTS_IO_BANK0_H
-

@@ -102,4 +102,3 @@ typedef struct {
 static_assert(sizeof (spi_hw_t) == 0x0028, "");
 
 #endif // _HARDWARE_STRUCTS_SPI_H
-

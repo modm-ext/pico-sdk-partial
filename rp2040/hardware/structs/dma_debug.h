@@ -1,7 +1,7 @@
 // THIS HEADER FILE IS AUTOMATICALLY GENERATED -- DO NOT EDIT
 
 /**
- * Copyright (c) 2024 Raspberry Pi Ltd.
+ * Copyright (c) 2021 Raspberry Pi Ltd.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -44,4 +44,3 @@ typedef struct {
 #define dma_debug_hw ((dma_debug_hw_t *)(DMA_BASE + DMA_CH0_DBG_CTDREQ_OFFSET))
 
 #endif // _HARDWARE_STRUCTS_DMA_DEBUG_H
-

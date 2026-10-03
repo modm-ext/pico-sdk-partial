@@ -249,4 +249,3 @@ typedef struct {
 static_assert(sizeof (pwm_hw_t) == 0x0110, "");
 
 #endif // _HARDWARE_STRUCTS_PWM_H
-

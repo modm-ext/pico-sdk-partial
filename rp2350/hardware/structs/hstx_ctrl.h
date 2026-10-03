@@ -67,4 +67,3 @@ typedef struct {
 static_assert(sizeof (hstx_ctrl_hw_t) == 0x002c, "");
 
 #endif // _HARDWARE_STRUCTS_HSTX_CTRL_H
-

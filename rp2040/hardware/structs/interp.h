@@ -1,7 +1,7 @@
 // THIS HEADER FILE IS AUTOMATICALLY GENERATED -- DO NOT EDIT
 
 /**
- * Copyright (c) 2024 Raspberry Pi Ltd.
+ * Copyright (c) 2021 Raspberry Pi Ltd.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -83,4 +83,3 @@ static_assert(sizeof (interp_hw_t) == 0x0040, "");
 #define interp1_hw (&interp_hw_array[1])
 
 #endif // _HARDWARE_STRUCTS_INTERP_H
-

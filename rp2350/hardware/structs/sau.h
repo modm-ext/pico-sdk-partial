@@ -58,8 +58,6 @@ typedef struct {
 } armv8m_sau_hw_t;
 
 #define sau_hw ((armv8m_sau_hw_t *)(PPB_BASE + M33_SAU_CTRL_OFFSET))
-#define sau_ns_hw ((armv8m_sau_hw_t *)(PPB_NONSEC_BASE + M33_SAU_CTRL_OFFSET))
 static_assert(sizeof (armv8m_sau_hw_t) == 0x0014, "");
 
 #endif // _HARDWARE_STRUCTS_SAU_H
-

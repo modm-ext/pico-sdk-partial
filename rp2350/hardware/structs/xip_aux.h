@@ -48,4 +48,3 @@ typedef struct {
 static_assert(sizeof (xip_aux_hw_t) == 0x000c, "");
 
 #endif // _HARDWARE_STRUCTS_XIP_AUX_H
-

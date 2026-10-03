@@ -1,7 +1,7 @@
 // THIS HEADER FILE IS AUTOMATICALLY GENERATED -- DO NOT EDIT
 
 /**
- * Copyright (c) 2024 Raspberry Pi Ltd.
+ * Copyright (c) 2021 Raspberry Pi Ltd.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -58,4 +58,3 @@ typedef struct {
 static_assert(sizeof (pll_hw_t) == 0x0010, "");
 
 #endif // _HARDWARE_STRUCTS_PLL_H
-

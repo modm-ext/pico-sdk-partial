@@ -22,7 +22,6 @@
 //
 // Bit-field descriptions are of the form:
 // BITMASK [BITRANGE] FIELDNAME (RESETVALUE) DESCRIPTION
-
 /** \brief Clock numbers on RP2350 (used as typedef \ref clock_num_t)
  *  \ingroup hardware_clocks
  */
@@ -167,7 +166,7 @@ typedef struct {
     io_rw_32 max_khz;
 
     _REG_(CLOCKS_FC0_DELAY_OFFSET) // CLOCKS_FC0_DELAY
-    // Delays the start of frequency counting to allow the mux to settle +
+    // Delays the start of frequency counting to allow the mux to settle
     // 0x00000007 [2:0]   FC0_DELAY    (0x1)
     io_rw_32 delay;
 
@@ -177,7 +176,7 @@ typedef struct {
     io_rw_32 interval;
 
     _REG_(CLOCKS_FC0_SRC_OFFSET) // CLOCKS_FC0_SRC
-    // Clock sent to frequency counter, set to 0 when not required +
+    // Clock sent to frequency counter, set to 0 when not required
     // 0x000000ff [7:0]   FC0_SRC      (0x00)
     io_rw_32 src;
 
@@ -223,7 +222,7 @@ typedef struct {
         struct {
             _REG_(CLOCKS_WAKE_EN0_OFFSET) // CLOCKS_WAKE_EN0
             // enable clock in wake mode
-            // 0x80000000 [31]    CLK_SYS_SIOB (1)
+            // 0x80000000 [31]    CLK_SYS_SIO (1)
             // 0x40000000 [30]    CLK_SYS_SHA256 (1)
             // 0x20000000 [29]    CLK_SYS_RSM  (1)
             // 0x10000000 [28]    CLK_SYS_ROSC (1)
@@ -334,7 +333,7 @@ typedef struct {
         struct {
             _REG_(CLOCKS_SLEEP_EN0_OFFSET) // CLOCKS_SLEEP_EN0
             // enable clock in sleep mode
-            // 0x80000000 [31]    CLK_SYS_SIOB (1)
+            // 0x80000000 [31]    CLK_SYS_SIO (1)
             // 0x40000000 [30]    CLK_SYS_SHA256 (1)
             // 0x20000000 [29]    CLK_SYS_RSM  (1)
             // 0x10000000 [28]    CLK_SYS_ROSC (1)
@@ -445,7 +444,7 @@ typedef struct {
         struct {
             _REG_(CLOCKS_ENABLED0_OFFSET) // CLOCKS_ENABLED0
             // indicates the state of the clock enable
-            // 0x80000000 [31]    CLK_SYS_SIOB (0)
+            // 0x80000000 [31]    CLK_SYS_SIO (0)
             // 0x40000000 [30]    CLK_SYS_SHA256 (0)
             // 0x20000000 [29]    CLK_SYS_RSM  (0)
             // 0x10000000 [28]    CLK_SYS_ROSC (0)
@@ -577,4 +576,3 @@ typedef struct {
 static_assert(sizeof (clocks_hw_t) == 0x00d4, "");
 
 #endif // _HARDWARE_STRUCTS_CLOCKS_H
-

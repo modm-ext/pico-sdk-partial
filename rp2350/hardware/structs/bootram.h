@@ -46,4 +46,3 @@ typedef struct {
 static_assert(sizeof (bootram_hw_t) == 0x002c, "");
 
 #endif // _HARDWARE_STRUCTS_BOOTRAM_H
-

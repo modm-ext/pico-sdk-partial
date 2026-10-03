@@ -46,4 +46,3 @@ typedef struct {
 static_assert(sizeof (pads_bank0_hw_t) == 0x00c4, "");
 
 #endif // _HARDWARE_STRUCTS_PADS_BANK0_H
-

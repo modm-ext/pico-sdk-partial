@@ -91,4 +91,3 @@ typedef struct {
 static_assert(sizeof (nvic_hw_t) == 0x0340, "");
 
 #endif // _HARDWARE_STRUCTS_NVIC_H
-

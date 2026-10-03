@@ -84,4 +84,3 @@ static_assert(sizeof (interp_hw_t) == 0x0040, "");
 #define interp1_hw (&interp_hw_array[1])
 
 #endif // _HARDWARE_STRUCTS_INTERP_H
-

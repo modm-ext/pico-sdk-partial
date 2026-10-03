@@ -335,4 +335,3 @@ typedef struct {
 static_assert(sizeof (i2c_hw_t) == 0x0100, "");
 
 #endif // _HARDWARE_STRUCTS_I2C_H
-

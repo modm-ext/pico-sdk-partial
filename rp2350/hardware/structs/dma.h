@@ -79,7 +79,7 @@ typedef struct {
     io_rw_32 al1_write_addr;
 
     _REG_(DMA_CH0_AL1_TRANS_COUNT_TRIG_OFFSET) // DMA_CH0_AL1_TRANS_COUNT_TRIG
-    // Alias for channel 0 TRANS_COUNT register +
+    // Alias for channel 0 TRANS_COUNT register
     // 0xffffffff [31:0]  CH0_AL1_TRANS_COUNT_TRIG (-)
     io_rw_32 al1_transfer_count_trig;
 
@@ -99,7 +99,7 @@ typedef struct {
     io_rw_32 al2_read_addr;
 
     _REG_(DMA_CH0_AL2_WRITE_ADDR_TRIG_OFFSET) // DMA_CH0_AL2_WRITE_ADDR_TRIG
-    // Alias for channel 0 WRITE_ADDR register +
+    // Alias for channel 0 WRITE_ADDR register
     // 0xffffffff [31:0]  CH0_AL2_WRITE_ADDR_TRIG (-)
     io_rw_32 al2_write_addr_trig;
 
@@ -119,7 +119,7 @@ typedef struct {
     io_rw_32 al3_transfer_count;
 
     _REG_(DMA_CH0_AL3_READ_ADDR_TRIG_OFFSET) // DMA_CH0_AL3_READ_ADDR_TRIG
-    // Alias for channel 0 READ_ADDR register +
+    // Alias for channel 0 READ_ADDR register
     // 0xffffffff [31:0]  CH0_AL3_READ_ADDR_TRIG (-)
     io_rw_32 al3_read_addr_trig;
 } dma_channel_hw_t;
@@ -333,4 +333,3 @@ typedef struct {
 static_assert(sizeof (dma_hw_t) == 0x0544, "");
 
 #endif // _HARDWARE_STRUCTS_DMA_H
-

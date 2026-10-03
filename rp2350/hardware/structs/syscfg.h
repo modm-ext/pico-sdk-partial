@@ -31,12 +31,12 @@ typedef struct {
     io_ro_32 proc_config;
 
     _REG_(SYSCFG_PROC_IN_SYNC_BYPASS_OFFSET) // SYSCFG_PROC_IN_SYNC_BYPASS
-    // For each bit, if 1, bypass the input synchronizer between that GPIO +
+    // For each bit, if 1, bypass the input synchronizer between that GPIO
     // 0xffffffff [31:0]  GPIO         (0x00000000)
     io_rw_32 proc_in_sync_bypass;
 
     _REG_(SYSCFG_PROC_IN_SYNC_BYPASS_HI_OFFSET) // SYSCFG_PROC_IN_SYNC_BYPASS_HI
-    // For each bit, if 1, bypass the input synchronizer between that GPIO +
+    // For each bit, if 1, bypass the input synchronizer between that GPIO
     // 0xf0000000 [31:28] QSPI_SD      (0x0)
     // 0x08000000 [27]    QSPI_CSN     (0)
     // 0x04000000 [26]    QSPI_SCK     (0)
@@ -80,4 +80,3 @@ typedef struct {
 static_assert(sizeof (syscfg_hw_t) == 0x0018, "");
 
 #endif // _HARDWARE_STRUCTS_SYSCFG_H
-

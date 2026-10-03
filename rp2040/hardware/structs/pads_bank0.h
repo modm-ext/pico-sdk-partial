@@ -1,7 +1,7 @@
 // THIS HEADER FILE IS AUTOMATICALLY GENERATED -- DO NOT EDIT
 
 /**
- * Copyright (c) 2024 Raspberry Pi Ltd.
+ * Copyright (c) 2021 Raspberry Pi Ltd.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -46,4 +46,3 @@ typedef struct {
 static_assert(sizeof (pads_bank0_hw_t) == 0x007c, "");
 
 #endif // _HARDWARE_STRUCTS_PADS_BANK0_H
-

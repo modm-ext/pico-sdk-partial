@@ -123,4 +123,3 @@ typedef struct {
 static_assert(sizeof (mpu_hw_t) == 0x0038, "");
 
 #endif // _HARDWARE_STRUCTS_MPU_H
-

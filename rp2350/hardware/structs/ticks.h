@@ -60,4 +60,3 @@ typedef struct {
 static_assert(sizeof (ticks_hw_t) == 0x0048, "");
 
 #endif // _HARDWARE_STRUCTS_TICKS_H
-

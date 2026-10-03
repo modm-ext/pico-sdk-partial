@@ -27,7 +27,6 @@
 #error "Arm header included in a RISC-V build with PICO_FORBID_ARM_HEADERS_ON_RISCV=1"
 #endif
 
-
 typedef struct {
     // (Description copied from array index 0 register M33_EPPB_NMI_MASK0 applies similarly to other array indexes)
     _REG_(M33_EPPB_NMI_MASK0_OFFSET) // M33_EPPB_NMI_MASK0
@@ -47,4 +46,3 @@ typedef struct {
 static_assert(sizeof (m33_eppb_hw_t) == 0x000c, "");
 
 #endif // _HARDWARE_STRUCTS_M33_EPPB_H
-

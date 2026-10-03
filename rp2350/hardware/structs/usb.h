@@ -599,4 +599,3 @@ typedef struct {
 static_assert(sizeof (usb_hw_t) == 0x0118, "");
 
 #endif // _HARDWARE_STRUCTS_USB_H
-

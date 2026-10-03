@@ -76,4 +76,3 @@ typedef struct {
 static_assert(sizeof (xip_ctrl_hw_t) == 0x0020, "");
 
 #endif // _HARDWARE_STRUCTS_XIP_H
-

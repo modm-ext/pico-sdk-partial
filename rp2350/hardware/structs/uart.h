@@ -179,4 +179,3 @@ typedef struct {
 static_assert(sizeof (uart_hw_t) == 0x004c, "");
 
 #endif // _HARDWARE_STRUCTS_UART_H
-

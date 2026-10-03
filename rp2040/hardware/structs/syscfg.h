@@ -1,7 +1,7 @@
 // THIS HEADER FILE IS AUTOMATICALLY GENERATED -- DO NOT EDIT
 
 /**
- * Copyright (c) 2024 Raspberry Pi Ltd.
+ * Copyright (c) 2021 Raspberry Pi Ltd.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -43,12 +43,12 @@ typedef struct {
     io_rw_32 proc_config;
 
     _REG_(SYSCFG_PROC_IN_SYNC_BYPASS_OFFSET) // SYSCFG_PROC_IN_SYNC_BYPASS
-    // For each bit, if 1, bypass the input synchronizer between that GPIO +
+    // For each bit, if 1, bypass the input synchronizer between that GPIO
     // 0x3fffffff [29:0]  PROC_IN_SYNC_BYPASS (0x00000000)
     io_rw_32 proc_in_sync_bypass;
 
     _REG_(SYSCFG_PROC_IN_SYNC_BYPASS_HI_OFFSET) // SYSCFG_PROC_IN_SYNC_BYPASS_HI
-    // For each bit, if 1, bypass the input synchronizer between that GPIO +
+    // For each bit, if 1, bypass the input synchronizer between that GPIO
     // 0x0000003f [5:0]   PROC_IN_SYNC_BYPASS_HI (0x00)
     io_rw_32 proc_in_sync_bypass_hi;
 
@@ -81,4 +81,3 @@ typedef struct {
 static_assert(sizeof (syscfg_hw_t) == 0x001c, "");
 
 #endif // _HARDWARE_STRUCTS_SYSCFG_H
-

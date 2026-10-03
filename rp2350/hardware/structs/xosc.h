@@ -61,4 +61,3 @@ typedef struct {
 static_assert(sizeof (xosc_hw_t) == 0x0014, "");
 
 #endif // _HARDWARE_STRUCTS_XOSC_H
-
