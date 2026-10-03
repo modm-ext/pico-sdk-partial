@@ -9,16 +9,17 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/modm-ext/modm-build-cortex-m:latest
     steps:
+      - name: Install ARM toolchain for building boot2
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gcc-arm-none-eabi libnewlib-arm-none-eabi
       - name: Check out repository
         uses: actions/checkout@v4
       - name: Configure Git
         run: |
           git config --global user.email "bot@modm.io"
           git config --global user.name "modm update bot"
-          git config --global --add safe.directory /__w/pico-sdk-partial/pico-sdk-partial
       - name: Run update.py script
         env:
           GITHUB_TOKEN: ${{ github.token }}

@@ -83,7 +83,7 @@ for variant, targets in boot2_variants.items():
             with ofilename.open("w") as ofile:
                 ofile.write("// Stage2 bootloader\n\n")
                 ofile.write("#include <cstdint>\n")
-                ofile.write('extern "C" __attribute__((section(".boot2"))) const uint8_t boot2[256] = {\n')
+                ofile.write('extern "C" __attribute__((section(".boot2"), used)) const uint8_t boot2[256] = {\n')
                 for offs in range(0, len(odata), 16):
                     chunk = odata[offs:min(offs + 16, len(odata))]
                     ofile.write("\t {},\n".format(", ".join(f"0x{b:02x}" for b in chunk)))
